@@ -1,74 +1,19 @@
-# CloneCordApi.ChannelsAPIApi
+# CloneCordApi.MessagesApi
 
 All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChannelUsingPOST**](ChannelsAPIApi.md#createChannelUsingPOST) | **POST** /guilds/{guildId} | Creates a new Channel in specified Guild
-[**deleteChannelUsingDELETE**](ChannelsAPIApi.md#deleteChannelUsingDELETE) | **DELETE** /guilds/{guildId}/{channelId} | Deletes specified Channel if current User has permissions
-[**updateChannelUsingPUT**](ChannelsAPIApi.md#updateChannelUsingPUT) | **PUT** /guilds/{guildId}/{channelId} | Updates specified Channel if current User has permissions
+[**deleteMessageUsingDELETE**](MessagesApi.md#deleteMessageUsingDELETE) | **DELETE** /guilds/{guildId}/{channelId}/messages/{messageId} | Deletes specified message in specified Channel if current User has permissions
+[**getMessagesUsingGET**](MessagesApi.md#getMessagesUsingGET) | **GET** /guilds/{guildId}/{channelId}/messages | Gets a list of messages in specified Channel if current User has permissions
+[**sendMessageUsingPOST**](MessagesApi.md#sendMessageUsingPOST) | **POST** /guilds/{guildId}/{channelId}/messages | Sends a new message to specified Channel if current User has permissions
 
 
-<a name="createChannelUsingPOST"></a>
-# **createChannelUsingPOST**
-> Channel createChannelUsingPOST(guildId, opts)
+<a name="deleteMessageUsingDELETE"></a>
+# **deleteMessageUsingDELETE**
+> deleteMessageUsingDELETE(channelId, guildId, messageId)
 
-Creates a new Channel in specified Guild
-
-### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
-
-// Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
-
-var apiInstance = new CloneCordApi.ChannelsAPIApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var opts = { 
-  'channel': new CloneCordApi.FormChannel() // FormChannel | Channel data
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createChannelUsingPOST(guildId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| Channel data | [optional] 
-
-### Return type
-
-[**Channel**](Channel.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-<a name="deleteChannelUsingDELETE"></a>
-# **deleteChannelUsingDELETE**
-> deleteChannelUsingDELETE(channelId, guildId)
-
-Deletes specified Channel if current User has permissions
+Deletes specified message in specified Channel if current User has permissions
 
 ### Example
 ```javascript
@@ -81,11 +26,13 @@ JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.ChannelsAPIApi();
+var apiInstance = new CloneCordApi.MessagesApi();
 
 var channelId = "channelId_example"; // String | ID of the specified Channel
 
 var guildId = "guildId_example"; // String | ID of the specified Guild
+
+var messageId = "messageId_example"; // String | ID of the specified Message
 
 
 var callback = function(error, data, response) {
@@ -95,7 +42,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteChannelUsingDELETE(channelId, guildId, callback);
+apiInstance.deleteMessageUsingDELETE(channelId, guildId, messageId, callback);
 ```
 
 ### Parameters
@@ -104,6 +51,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **messageId** | [**String**](.md)| ID of the specified Message | 
 
 ### Return type
 
@@ -118,11 +66,11 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="updateChannelUsingPUT"></a>
-# **updateChannelUsingPUT**
-> Channel updateChannelUsingPUT(channelId, guildId, opts)
+<a name="getMessagesUsingGET"></a>
+# **getMessagesUsingGET**
+> [Message] getMessagesUsingGET(channelId, guildId, opts)
 
-Updates specified Channel if current User has permissions
+Gets a list of messages in specified Channel if current User has permissions
 
 ### Example
 ```javascript
@@ -135,14 +83,16 @@ JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.ChannelsAPIApi();
+var apiInstance = new CloneCordApi.MessagesApi();
 
 var channelId = "channelId_example"; // String | ID of the specified Channel
 
 var guildId = "guildId_example"; // String | ID of the specified Guild
 
 var opts = { 
-  'channel': new CloneCordApi.FormChannel() // FormChannel | New channel data
+  'after': 789, // Number | Return only mesages after this timestamp
+  'before': 789, // Number | Return only messages sent before this timestamp
+  'limit': 100 // Number | Maximum number of messages to return (max = 100)
 };
 
 var callback = function(error, data, response) {
@@ -152,7 +102,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateChannelUsingPUT(channelId, guildId, opts, callback);
+apiInstance.getMessagesUsingGET(channelId, guildId, opts, callback);
 ```
 
 ### Parameters
@@ -161,11 +111,71 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| New channel data | [optional] 
+ **after** | **Number**| Return only mesages after this timestamp | [optional] 
+ **before** | **Number**| Return only messages sent before this timestamp | [optional] 
+ **limit** | **Number**| Maximum number of messages to return (max = 100) | [optional] [default to 100]
 
 ### Return type
 
-[**Channel**](Channel.md)
+[**[Message]**](Message.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="sendMessageUsingPOST"></a>
+# **sendMessageUsingPOST**
+> Message sendMessageUsingPOST(channelId, guildId, opts)
+
+Sends a new message to specified Channel if current User has permissions
+
+### Example
+```javascript
+var CloneCordApi = require('clone_cord_api');
+var defaultClient = CloneCordApi.ApiClient.instance;
+
+// Configure API key authorization: JWT
+var JWT = defaultClient.authentications['JWT'];
+JWT.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//JWT.apiKeyPrefix = 'Token';
+
+var apiInstance = new CloneCordApi.MessagesApi();
+
+var channelId = "channelId_example"; // String | ID of the specified Channel
+
+var guildId = "guildId_example"; // String | ID of the specified Guild
+
+var opts = { 
+  'message': new CloneCordApi.FormMessage() // FormMessage | Message data
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.sendMessageUsingPOST(channelId, guildId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
+ **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **message** | [**FormMessage**](FormMessage.md)| Message data | [optional] 
+
+### Return type
+
+[**Message**](Message.md)
 
 ### Authorization
 

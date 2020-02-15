@@ -1,11 +1,11 @@
-# CloneCordApi.AuthenticationAPIApi
+# CloneCordApi.AuthenticationApi
 
 All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**loginUsingPOST**](AuthenticationAPIApi.md#loginUsingPOST) | **POST** /auth/login | Log in
-[**signUpUsingPOST**](AuthenticationAPIApi.md#signUpUsingPOST) | **POST** /auth/register | Create an account
+[**loginUsingPOST**](AuthenticationApi.md#loginUsingPOST) | **POST** /auth/login | Log in
+[**signUpUsingPOST**](AuthenticationApi.md#signUpUsingPOST) | **POST** /auth/register | Create an account
 
 
 <a name="loginUsingPOST"></a>
@@ -18,7 +18,7 @@ Log in
 ```javascript
 var CloneCordApi = require('clone_cord_api');
 
-var apiInstance = new CloneCordApi.AuthenticationAPIApi();
+var apiInstance = new CloneCordApi.AuthenticationApi();
 
 var opts = { 
   'user': new CloneCordApi.FormLogin() // FormLogin | Login data
@@ -63,7 +63,7 @@ Create an account
 ```javascript
 var CloneCordApi = require('clone_cord_api');
 
-var apiInstance = new CloneCordApi.AuthenticationAPIApi();
+var apiInstance = new CloneCordApi.AuthenticationApi();
 
 var opts = { 
   'registrationData': new CloneCordApi.RegistrationUser() // RegistrationUser | authData

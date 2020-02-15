@@ -1,20 +1,19 @@
-# CloneCordApi.GuildsAPIApi
+# CloneCordApi.RolesApi
 
 All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createGuildUsingPOST**](GuildsAPIApi.md#createGuildUsingPOST) | **POST** /guilds | Creates a new Guild
-[**deleteGuildUsingDELETE**](GuildsAPIApi.md#deleteGuildUsingDELETE) | **DELETE** /guilds/{guildId} | Deletes an owned Guild
-[**getGuildInfoUsingGET**](GuildsAPIApi.md#getGuildInfoUsingGET) | **GET** /guilds/{guildId} | Gets info of a specific Guild
-[**updateGuildUsingPUT**](GuildsAPIApi.md#updateGuildUsingPUT) | **PUT** /guilds/{guildId} | Updates an owned Guild
+[**createRoleUsingPOST**](RolesApi.md#createRoleUsingPOST) | **POST** /guilds/{guildId}/roles | Creates a new Role in specified Guild if current User has permissions
+[**deleteRoleUsingDELETE**](RolesApi.md#deleteRoleUsingDELETE) | **DELETE** /guilds/{guildId}/roles/{roleId} | Deletes specified Role in specified Guild if current User has permissions
+[**updateRoleUsingPUT**](RolesApi.md#updateRoleUsingPUT) | **PUT** /guilds/{guildId}/roles/{roleId} | Updates specified Role in specified Guild if current User has permissions
 
 
-<a name="createGuildUsingPOST"></a>
-# **createGuildUsingPOST**
-> Guild createGuildUsingPOST(guild)
+<a name="createRoleUsingPOST"></a>
+# **createRoleUsingPOST**
+> Role createRoleUsingPOST(guildId, opts)
 
-Creates a new Guild
+Creates a new Role in specified Guild if current User has permissions
 
 ### Example
 ```javascript
@@ -27,10 +26,13 @@ JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsAPIApi();
+var apiInstance = new CloneCordApi.RolesApi();
 
-var guild = new CloneCordApi.FormGuild(); // FormGuild | guild
+var guildId = "guildId_example"; // String | ID of the specified Guild
 
+var opts = { 
+  'role': new CloneCordApi.FormRole() // FormRole | Role data
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -39,18 +41,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createGuildUsingPOST(guild, callback);
+apiInstance.createRoleUsingPOST(guildId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guild** | [**FormGuild**](FormGuild.md)| guild | 
+ **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **role** | [**FormRole**](FormRole.md)| Role data | [optional] 
 
 ### Return type
 
-[**Guild**](Guild.md)
+[**Role**](Role.md)
 
 ### Authorization
 
@@ -61,11 +64,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="deleteGuildUsingDELETE"></a>
-# **deleteGuildUsingDELETE**
-> deleteGuildUsingDELETE(guildId)
+<a name="deleteRoleUsingDELETE"></a>
+# **deleteRoleUsingDELETE**
+> deleteRoleUsingDELETE(guildId, roleId)
 
-Deletes an owned Guild
+Deletes specified Role in specified Guild if current User has permissions
 
 ### Example
 ```javascript
@@ -78,9 +81,11 @@ JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsAPIApi();
+var apiInstance = new CloneCordApi.RolesApi();
 
 var guildId = "guildId_example"; // String | ID of the specified Guild
+
+var roleId = "roleId_example"; // String | ID of the specified Role
 
 
 var callback = function(error, data, response) {
@@ -90,7 +95,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteGuildUsingDELETE(guildId, callback);
+apiInstance.deleteRoleUsingDELETE(guildId, roleId, callback);
 ```
 
 ### Parameters
@@ -98,6 +103,7 @@ apiInstance.deleteGuildUsingDELETE(guildId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **roleId** | [**String**](.md)| ID of the specified Role | 
 
 ### Return type
 
@@ -112,62 +118,11 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getGuildInfoUsingGET"></a>
-# **getGuildInfoUsingGET**
-> Guild getGuildInfoUsingGET(guildId)
+<a name="updateRoleUsingPUT"></a>
+# **updateRoleUsingPUT**
+> Role updateRoleUsingPUT(guildId, roleId, opts)
 
-Gets info of a specific Guild
-
-### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
-
-// Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
-
-var apiInstance = new CloneCordApi.GuildsAPIApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getGuildInfoUsingGET(guildId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **guildId** | [**String**](.md)| ID of the specified Guild | 
-
-### Return type
-
-[**Guild**](Guild.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-<a name="updateGuildUsingPUT"></a>
-# **updateGuildUsingPUT**
-> Guild updateGuildUsingPUT(guildId, opts)
-
-Updates an owned Guild
+Updates specified Role in specified Guild if current User has permissions
 
 ### Example
 ```javascript
@@ -180,12 +135,14 @@ JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsAPIApi();
+var apiInstance = new CloneCordApi.RolesApi();
 
 var guildId = "guildId_example"; // String | ID of the specified Guild
+
+var roleId = "roleId_example"; // String | roleId
 
 var opts = { 
-  'newGuild': new CloneCordApi.FormGuild() // FormGuild | New guild data
+  'role': new CloneCordApi.FormRole() // FormRole | New role data
 };
 
 var callback = function(error, data, response) {
@@ -195,7 +152,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateGuildUsingPUT(guildId, opts, callback);
+apiInstance.updateRoleUsingPUT(guildId, roleId, opts, callback);
 ```
 
 ### Parameters
@@ -203,11 +160,12 @@ apiInstance.updateGuildUsingPUT(guildId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **newGuild** | [**FormGuild**](FormGuild.md)| New guild data | [optional] 
+ **roleId** | [**String**](.md)| roleId | 
+ **role** | [**FormRole**](FormRole.md)| New role data | [optional] 
 
 ### Return type
 
-[**Guild**](Guild.md)
+[**Role**](Role.md)
 
 ### Authorization
 
