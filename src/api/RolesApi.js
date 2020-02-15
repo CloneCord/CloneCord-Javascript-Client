@@ -46,17 +46,19 @@ export default class RolesApi {
     /**
      * Creates a new Role in specified Guild if current User has permissions
      * @param {String} guildId ID of the specified Guild
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormRole} opts.role Role data
+     * @param {module:model/FormRole} role Role data
      * @param {module:api/RolesApi~createRoleUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Role}
      */
-    createRoleUsingPOST(guildId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['role'];
+    createRoleUsingPOST(guildId, role, callback) {
+      let postBody = role;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling createRoleUsingPOST");
+      }
+      // verify the required parameter 'role' is set
+      if (role === undefined || role === null) {
+        throw new Error("Missing the required parameter 'role' when calling createRoleUsingPOST");
       }
 
       let pathParams = {
@@ -139,14 +141,12 @@ export default class RolesApi {
      * Updates specified Role in specified Guild if current User has permissions
      * @param {String} guildId ID of the specified Guild
      * @param {String} roleId roleId
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormRole} opts.role New role data
+     * @param {module:model/FormRole} role New role data
      * @param {module:api/RolesApi~updateRoleUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Role}
      */
-    updateRoleUsingPUT(guildId, roleId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['role'];
+    updateRoleUsingPUT(guildId, roleId, role, callback) {
+      let postBody = role;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling updateRoleUsingPUT");
@@ -154,6 +154,10 @@ export default class RolesApi {
       // verify the required parameter 'roleId' is set
       if (roleId === undefined || roleId === null) {
         throw new Error("Missing the required parameter 'roleId' when calling updateRoleUsingPUT");
+      }
+      // verify the required parameter 'role' is set
+      if (role === undefined || role === null) {
+        throw new Error("Missing the required parameter 'role' when calling updateRoleUsingPUT");
       }
 
       let pathParams = {

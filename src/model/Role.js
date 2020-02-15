@@ -22,10 +22,12 @@ class Role {
     /**
      * Constructs a new <code>Role</code>.
      * @alias module:model/Role
+     * @param hexColor {String} Role color
+     * @param name {String} Role name
      */
-    constructor() { 
+    constructor(hexColor, name) { 
         
-        Role.initialize(this);
+        Role.initialize(this, hexColor, name);
     }
 
     /**
@@ -33,7 +35,9 @@ class Role {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, hexColor, name) { 
+        obj['hexColor'] = hexColor;
+        obj['name'] = name;
     }
 
     /**
@@ -47,9 +51,6 @@ class Role {
         if (data) {
             obj = obj || new Role();
 
-            if (data.hasOwnProperty('displayName')) {
-                obj['displayName'] = ApiClient.convertToType(data['displayName'], 'String');
-            }
             if (data.hasOwnProperty('hexColor')) {
                 obj['hexColor'] = ApiClient.convertToType(data['hexColor'], 'String');
             }
@@ -67,11 +68,7 @@ class Role {
 }
 
 /**
- * @member {String} displayName
- */
-Role.prototype['displayName'] = undefined;
-
-/**
+ * Role color
  * @member {String} hexColor
  */
 Role.prototype['hexColor'] = undefined;
@@ -82,6 +79,7 @@ Role.prototype['hexColor'] = undefined;
 Role.prototype['id'] = undefined;
 
 /**
+ * Role name
  * @member {String} name
  */
 Role.prototype['name'] = undefined;

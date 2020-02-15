@@ -160,14 +160,16 @@ export default class UsersApi {
 
     /**
      * Updates information about current User
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormUser} opts.user New User data
+     * @param {module:model/FormUser} user New User data
      * @param {module:api/UsersApi~putSelfUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    putSelfUsingPUT(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['user'];
+    putSelfUsingPUT(user, callback) {
+      let postBody = user;
+      // verify the required parameter 'user' is set
+      if (user === undefined || user === null) {
+        throw new Error("Missing the required parameter 'user' when calling putSelfUsingPUT");
+      }
 
       let pathParams = {
       };

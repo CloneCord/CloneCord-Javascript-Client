@@ -22,10 +22,11 @@ class User {
     /**
      * Constructs a new <code>User</code>.
      * @alias module:model/User
+     * @param username {String} User name
      */
-    constructor() { 
+    constructor(username) { 
         
-        User.initialize(this);
+        User.initialize(this, username);
     }
 
     /**
@@ -33,7 +34,8 @@ class User {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, username) { 
+        obj['username'] = username;
     }
 
     /**
@@ -64,6 +66,7 @@ class User {
 }
 
 /**
+ * User avatar
  * @member {String} avatar
  */
 User.prototype['avatar'] = undefined;
@@ -74,6 +77,7 @@ User.prototype['avatar'] = undefined;
 User.prototype['id'] = undefined;
 
 /**
+ * User name
  * @member {String} username
  */
 User.prototype['username'] = undefined;

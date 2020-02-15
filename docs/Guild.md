@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **channels** | [**[Channel]**](Channel.md) |  | [optional] 
 **id** | **String** |  | [optional] 
 **members** | [**[Member]**](Member.md) |  | [optional] 
-**name** | **String** |  | [optional] 
+**name** | **String** | Guild name | 
 **roles** | [**[Role]**](Role.md) |  | [optional] 
 
 

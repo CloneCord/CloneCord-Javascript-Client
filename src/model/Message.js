@@ -23,10 +23,11 @@ class Message {
     /**
      * Constructs a new <code>Message</code>.
      * @alias module:model/Message
+     * @param message {String} Message content
      */
-    constructor() { 
+    constructor(message) { 
         
-        Message.initialize(this);
+        Message.initialize(this, message);
     }
 
     /**
@@ -34,7 +35,8 @@ class Message {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, message) { 
+        obj['message'] = message;
     }
 
     /**
@@ -84,6 +86,7 @@ Message.prototype['channelId'] = undefined;
 Message.prototype['id'] = undefined;
 
 /**
+ * Message content
  * @member {String} message
  */
 Message.prototype['message'] = undefined;

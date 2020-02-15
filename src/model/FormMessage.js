@@ -22,10 +22,11 @@ class FormMessage {
     /**
      * Constructs a new <code>FormMessage</code>.
      * @alias module:model/FormMessage
+     * @param message {String} Message content
      */
-    constructor() { 
+    constructor(message) { 
         
-        FormMessage.initialize(this);
+        FormMessage.initialize(this, message);
     }
 
     /**
@@ -33,7 +34,8 @@ class FormMessage {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, message) { 
+        obj['message'] = message;
     }
 
     /**
@@ -58,6 +60,7 @@ class FormMessage {
 }
 
 /**
+ * Message content
  * @member {String} message
  */
 FormMessage.prototype['message'] = undefined;

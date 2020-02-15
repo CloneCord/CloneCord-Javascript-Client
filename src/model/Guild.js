@@ -25,10 +25,11 @@ class Guild {
     /**
      * Constructs a new <code>Guild</code>.
      * @alias module:model/Guild
+     * @param name {String} Guild name
      */
-    constructor() { 
+    constructor(name) { 
         
-        Guild.initialize(this);
+        Guild.initialize(this, name);
     }
 
     /**
@@ -36,7 +37,8 @@ class Guild {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name) { 
+        obj['name'] = name;
     }
 
     /**
@@ -88,6 +90,7 @@ Guild.prototype['id'] = undefined;
 Guild.prototype['members'] = undefined;
 
 /**
+ * Guild name
  * @member {String} name
  */
 Guild.prototype['name'] = undefined;

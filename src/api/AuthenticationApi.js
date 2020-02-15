@@ -46,13 +46,15 @@ export default class AuthenticationApi {
 
     /**
      * Log in
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormLogin} opts.user Login data
+     * @param {module:model/FormLogin} loginData loginData
      * @param {module:api/AuthenticationApi~loginUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    loginUsingPOST(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['user'];
+    loginUsingPOST(loginData, callback) {
+      let postBody = loginData;
+      // verify the required parameter 'loginData' is set
+      if (loginData === undefined || loginData === null) {
+        throw new Error("Missing the required parameter 'loginData' when calling loginUsingPOST");
+      }
 
       let pathParams = {
       };
@@ -84,14 +86,16 @@ export default class AuthenticationApi {
 
     /**
      * Create an account
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RegistrationUser} opts.registrationData authData
+     * @param {module:model/RegistrationUser} registrationData registrationData
      * @param {module:api/AuthenticationApi~signUpUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    signUpUsingPOST(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['registrationData'];
+    signUpUsingPOST(registrationData, callback) {
+      let postBody = registrationData;
+      // verify the required parameter 'registrationData' is set
+      if (registrationData === undefined || registrationData === null) {
+        throw new Error("Missing the required parameter 'registrationData' when calling signUpUsingPOST");
+      }
 
       let pathParams = {
       };

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** |  | [optional] 
-**password** | **String** |  | [optional] 
+**email** | **String** | User email | 
+**password** | **String** | User password | 
 
 

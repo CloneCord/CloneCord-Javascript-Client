@@ -22,10 +22,13 @@ class RegistrationUser {
     /**
      * Constructs a new <code>RegistrationUser</code>.
      * @alias module:model/RegistrationUser
+     * @param email {String} User email
+     * @param password {String} User password
+     * @param username {String} User name
      */
-    constructor() { 
+    constructor(email, password, username) { 
         
-        RegistrationUser.initialize(this);
+        RegistrationUser.initialize(this, email, password, username);
     }
 
     /**
@@ -33,7 +36,10 @@ class RegistrationUser {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, email, password, username) { 
+        obj['email'] = email;
+        obj['password'] = password;
+        obj['username'] = username;
     }
 
     /**
@@ -64,16 +70,19 @@ class RegistrationUser {
 }
 
 /**
+ * User email
  * @member {String} email
  */
 RegistrationUser.prototype['email'] = undefined;
 
 /**
+ * User password
  * @member {String} password
  */
 RegistrationUser.prototype['password'] = undefined;
 
 /**
+ * User name
  * @member {String} username
  */
 RegistrationUser.prototype['username'] = undefined;

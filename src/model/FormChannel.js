@@ -22,10 +22,11 @@ class FormChannel {
     /**
      * Constructs a new <code>FormChannel</code>.
      * @alias module:model/FormChannel
+     * @param name {String} Channel name
      */
-    constructor() { 
+    constructor(name) { 
         
-        FormChannel.initialize(this);
+        FormChannel.initialize(this, name);
     }
 
     /**
@@ -33,7 +34,8 @@ class FormChannel {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name) { 
+        obj['name'] = name;
     }
 
     /**
@@ -58,6 +60,7 @@ class FormChannel {
 }
 
 /**
+ * Channel name
  * @member {String} name
  */
 FormChannel.prototype['name'] = undefined;

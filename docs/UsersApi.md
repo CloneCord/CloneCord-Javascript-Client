@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## putSelfUsingPUT
 
-> User putSelfUsingPUT(opts)
+> User putSelfUsingPUT(user)
 
 Updates information about current User
 
@@ -168,10 +168,8 @@ JWT.apiKey = 'YOUR API KEY';
 //JWT.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.UsersApi();
-let opts = {
-  'user': new CloneCordApi.FormUser() // FormUser | New User data
-};
-apiInstance.putSelfUsingPUT(opts, (error, data, response) => {
+let user = new CloneCordApi.FormUser(); // FormUser | New User data
+apiInstance.putSelfUsingPUT(user, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -185,7 +183,7 @@ apiInstance.putSelfUsingPUT(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**FormUser**](FormUser.md)| New User data | [optional] 
+ **user** | [**FormUser**](FormUser.md)| New User data | 
 
 ### Return type
 

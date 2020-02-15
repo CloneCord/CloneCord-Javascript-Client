@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(CloneCordApi.FormRole);
     });
 
-    it('should have the property displayName (base name: "displayName")', function() {
-      // uncomment below and update the code to test the property displayName
-      //var instane = new CloneCordApi.FormRole();
-      //expect(instance).to.be();
-    });
-
     it('should have the property hexColor (base name: "hexColor")', function() {
       // uncomment below and update the code to test the property hexColor
       //var instane = new CloneCordApi.FormRole();

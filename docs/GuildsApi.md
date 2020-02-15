@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## updateGuildUsingPUT
 
-> Guild updateGuildUsingPUT(guildId, opts)
+> Guild updateGuildUsingPUT(guildId, newGuild)
 
 Updates an owned Guild
 
@@ -177,10 +177,8 @@ JWT.apiKey = 'YOUR API KEY';
 
 let apiInstance = new CloneCordApi.GuildsApi();
 let guildId = null; // String | ID of the specified Guild
-let opts = {
-  'newGuild': new CloneCordApi.FormGuild() // FormGuild | New guild data
-};
-apiInstance.updateGuildUsingPUT(guildId, opts, (error, data, response) => {
+let newGuild = new CloneCordApi.FormGuild(); // FormGuild | New guild data
+apiInstance.updateGuildUsingPUT(guildId, newGuild, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -195,7 +193,7 @@ apiInstance.updateGuildUsingPUT(guildId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **newGuild** | [**FormGuild**](FormGuild.md)| New guild data | [optional] 
+ **newGuild** | [**FormGuild**](FormGuild.md)| New guild data | 
 
 ### Return type
 

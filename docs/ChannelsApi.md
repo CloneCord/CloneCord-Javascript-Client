@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## createChannelUsingPOST
 
-> Channel createChannelUsingPOST(guildId, opts)
+> Channel createChannelUsingPOST(guildId, channel)
 
 Creates a new Channel in specified Guild
 
@@ -29,10 +29,8 @@ JWT.apiKey = 'YOUR API KEY';
 
 let apiInstance = new CloneCordApi.ChannelsApi();
 let guildId = null; // String | ID of the specified Guild
-let opts = {
-  'channel': new CloneCordApi.FormChannel() // FormChannel | Channel data
-};
-apiInstance.createChannelUsingPOST(guildId, opts, (error, data, response) => {
+let channel = new CloneCordApi.FormChannel(); // FormChannel | Channel data
+apiInstance.createChannelUsingPOST(guildId, channel, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -47,7 +45,7 @@ apiInstance.createChannelUsingPOST(guildId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| Channel data | [optional] 
+ **channel** | [**FormChannel**](FormChannel.md)| Channel data | 
 
 ### Return type
 
@@ -116,7 +114,7 @@ null (empty response body)
 
 ## updateChannelUsingPUT
 
-> Channel updateChannelUsingPUT(channelId, guildId, opts)
+> Channel updateChannelUsingPUT(channelId, guildId, channel)
 
 Updates specified Channel if current User has permissions
 
@@ -134,10 +132,8 @@ JWT.apiKey = 'YOUR API KEY';
 let apiInstance = new CloneCordApi.ChannelsApi();
 let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
-let opts = {
-  'channel': new CloneCordApi.FormChannel() // FormChannel | New channel data
-};
-apiInstance.updateChannelUsingPUT(channelId, guildId, opts, (error, data, response) => {
+let channel = new CloneCordApi.FormChannel(); // FormChannel | New channel data
+apiInstance.updateChannelUsingPUT(channelId, guildId, channel, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -153,7 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| New channel data | [optional] 
+ **channel** | [**FormChannel**](FormChannel.md)| New channel data | 
 
 ### Return type
 

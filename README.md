@@ -102,9 +102,7 @@ var CloneCordApi = require('clone_cord_api');
 
 
 var api = new CloneCordApi.AuthenticationApi()
-var opts = {
-  'user': new CloneCordApi.FormLogin() // {FormLogin} Login data
-};
+var loginData = new CloneCordApi.FormLogin(); // {FormLogin} loginData
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -112,7 +110,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.loginUsingPOST(opts, callback);
+api.loginUsingPOST(loginData, callback);
 
 ```
 

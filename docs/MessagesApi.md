@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## sendMessageUsingPOST
 
-> Message sendMessageUsingPOST(channelId, guildId, opts)
+> Message sendMessageUsingPOST(channelId, guildId, message)
 
 Sends a new message to specified Channel if current User has permissions
 
@@ -142,10 +142,8 @@ JWT.apiKey = 'YOUR API KEY';
 let apiInstance = new CloneCordApi.MessagesApi();
 let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
-let opts = {
-  'message': new CloneCordApi.FormMessage() // FormMessage | Message data
-};
-apiInstance.sendMessageUsingPOST(channelId, guildId, opts, (error, data, response) => {
+let message = new CloneCordApi.FormMessage(); // FormMessage | Message data
+apiInstance.sendMessageUsingPOST(channelId, guildId, message, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -161,7 +159,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **message** | [**FormMessage**](FormMessage.md)| Message data | [optional] 
+ **message** | [**FormMessage**](FormMessage.md)| Message data | 
 
 ### Return type
 

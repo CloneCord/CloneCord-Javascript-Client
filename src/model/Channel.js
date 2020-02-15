@@ -22,10 +22,11 @@ class Channel {
     /**
      * Constructs a new <code>Channel</code>.
      * @alias module:model/Channel
+     * @param name {String} Channel name
      */
-    constructor() { 
+    constructor(name) { 
         
-        Channel.initialize(this);
+        Channel.initialize(this, name);
     }
 
     /**
@@ -33,7 +34,8 @@ class Channel {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name) { 
+        obj['name'] = name;
     }
 
     /**
@@ -66,6 +68,7 @@ class Channel {
 Channel.prototype['channelId'] = undefined;
 
 /**
+ * Channel name
  * @member {String} name
  */
 Channel.prototype['name'] = undefined;

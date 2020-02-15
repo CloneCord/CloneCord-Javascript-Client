@@ -22,10 +22,11 @@ class Reaction {
     /**
      * Constructs a new <code>Reaction</code>.
      * @alias module:model/Reaction
+     * @param emoteId {Number} Emote id
      */
-    constructor() { 
+    constructor(emoteId) { 
         
-        Reaction.initialize(this);
+        Reaction.initialize(this, emoteId);
     }
 
     /**
@@ -33,7 +34,8 @@ class Reaction {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, emoteId) { 
+        obj['emoteId'] = emoteId;
     }
 
     /**
@@ -66,6 +68,7 @@ class Reaction {
 Reaction.prototype['authorUuid'] = undefined;
 
 /**
+ * Emote id
  * @member {Number} emoteId
  */
 Reaction.prototype['emoteId'] = undefined;

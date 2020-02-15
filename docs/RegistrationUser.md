@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** |  | [optional] 
-**password** | **String** |  | [optional] 
-**username** | **String** |  | [optional] 
+**email** | **String** | User email | 
+**password** | **String** | User password | 
+**username** | **String** | User name | 
 
 

@@ -22,10 +22,11 @@ class FormUser {
     /**
      * Constructs a new <code>FormUser</code>.
      * @alias module:model/FormUser
+     * @param username {String} User name
      */
-    constructor() { 
+    constructor(username) { 
         
-        FormUser.initialize(this);
+        FormUser.initialize(this, username);
     }
 
     /**
@@ -33,7 +34,8 @@ class FormUser {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, username) { 
+        obj['username'] = username;
     }
 
     /**
@@ -61,11 +63,13 @@ class FormUser {
 }
 
 /**
+ * User avatar
  * @member {String} avatar
  */
 FormUser.prototype['avatar'] = undefined;
 
 /**
+ * User name
  * @member {String} username
  */
 FormUser.prototype['username'] = undefined;

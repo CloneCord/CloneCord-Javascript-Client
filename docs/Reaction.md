@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authorUuid** | **String** |  | [optional] 
-**emoteId** | **Number** |  | [optional] 
+**emoteId** | **Number** | Emote id | 
 
 

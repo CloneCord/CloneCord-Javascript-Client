@@ -46,17 +46,19 @@ export default class ChannelsApi {
     /**
      * Creates a new Channel in specified Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormChannel} opts.channel Channel data
+     * @param {module:model/FormChannel} channel Channel data
      * @param {module:api/ChannelsApi~createChannelUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Channel}
      */
-    createChannelUsingPOST(guildId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['channel'];
+    createChannelUsingPOST(guildId, channel, callback) {
+      let postBody = channel;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling createChannelUsingPOST");
+      }
+      // verify the required parameter 'channel' is set
+      if (channel === undefined || channel === null) {
+        throw new Error("Missing the required parameter 'channel' when calling createChannelUsingPOST");
       }
 
       let pathParams = {
@@ -139,14 +141,12 @@ export default class ChannelsApi {
      * Updates specified Channel if current User has permissions
      * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormChannel} opts.channel New channel data
+     * @param {module:model/FormChannel} channel New channel data
      * @param {module:api/ChannelsApi~updateChannelUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Channel}
      */
-    updateChannelUsingPUT(channelId, guildId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['channel'];
+    updateChannelUsingPUT(channelId, guildId, channel, callback) {
+      let postBody = channel;
       // verify the required parameter 'channelId' is set
       if (channelId === undefined || channelId === null) {
         throw new Error("Missing the required parameter 'channelId' when calling updateChannelUsingPUT");
@@ -154,6 +154,10 @@ export default class ChannelsApi {
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling updateChannelUsingPUT");
+      }
+      // verify the required parameter 'channel' is set
+      if (channel === undefined || channel === null) {
+        throw new Error("Missing the required parameter 'channel' when calling updateChannelUsingPUT");
       }
 
       let pathParams = {

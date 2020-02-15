@@ -22,10 +22,11 @@ class FormGuild {
     /**
      * Constructs a new <code>FormGuild</code>.
      * @alias module:model/FormGuild
+     * @param name {String} Guild name
      */
-    constructor() { 
+    constructor(name) { 
         
-        FormGuild.initialize(this);
+        FormGuild.initialize(this, name);
     }
 
     /**
@@ -33,7 +34,8 @@ class FormGuild {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name) { 
+        obj['name'] = name;
     }
 
     /**
@@ -58,6 +60,7 @@ class FormGuild {
 }
 
 /**
+ * Guild name
  * @member {String} name
  */
 FormGuild.prototype['name'] = undefined;

@@ -170,17 +170,19 @@ export default class GuildsApi {
     /**
      * Updates an owned Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormGuild} opts.newGuild New guild data
+     * @param {module:model/FormGuild} newGuild New guild data
      * @param {module:api/GuildsApi~updateGuildUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Guild}
      */
-    updateGuildUsingPUT(guildId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['newGuild'];
+    updateGuildUsingPUT(guildId, newGuild, callback) {
+      let postBody = newGuild;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling updateGuildUsingPUT");
+      }
+      // verify the required parameter 'newGuild' is set
+      if (newGuild === undefined || newGuild === null) {
+        throw new Error("Missing the required parameter 'newGuild' when calling updateGuildUsingPUT");
       }
 
       let pathParams = {

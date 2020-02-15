@@ -156,14 +156,12 @@ export default class MessagesApi {
      * Sends a new message to specified Channel if current User has permissions
      * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormMessage} opts.message Message data
+     * @param {module:model/FormMessage} message Message data
      * @param {module:api/MessagesApi~sendMessageUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Message}
      */
-    sendMessageUsingPOST(channelId, guildId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['message'];
+    sendMessageUsingPOST(channelId, guildId, message, callback) {
+      let postBody = message;
       // verify the required parameter 'channelId' is set
       if (channelId === undefined || channelId === null) {
         throw new Error("Missing the required parameter 'channelId' when calling sendMessageUsingPOST");
@@ -171,6 +169,10 @@ export default class MessagesApi {
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling sendMessageUsingPOST");
+      }
+      // verify the required parameter 'message' is set
+      if (message === undefined || message === null) {
+        throw new Error("Missing the required parameter 'message' when calling sendMessageUsingPOST");
       }
 
       let pathParams = {

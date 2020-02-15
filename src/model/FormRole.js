@@ -22,10 +22,12 @@ class FormRole {
     /**
      * Constructs a new <code>FormRole</code>.
      * @alias module:model/FormRole
+     * @param hexColor {String} Role color
+     * @param name {String} Role name
      */
-    constructor() { 
+    constructor(hexColor, name) { 
         
-        FormRole.initialize(this);
+        FormRole.initialize(this, hexColor, name);
     }
 
     /**
@@ -33,7 +35,9 @@ class FormRole {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, hexColor, name) { 
+        obj['hexColor'] = hexColor;
+        obj['name'] = name;
     }
 
     /**
@@ -47,9 +51,6 @@ class FormRole {
         if (data) {
             obj = obj || new FormRole();
 
-            if (data.hasOwnProperty('displayName')) {
-                obj['displayName'] = ApiClient.convertToType(data['displayName'], 'String');
-            }
             if (data.hasOwnProperty('hexColor')) {
                 obj['hexColor'] = ApiClient.convertToType(data['hexColor'], 'String');
             }
@@ -64,16 +65,13 @@ class FormRole {
 }
 
 /**
- * @member {String} displayName
- */
-FormRole.prototype['displayName'] = undefined;
-
-/**
+ * Role color
  * @member {String} hexColor
  */
 FormRole.prototype['hexColor'] = undefined;
 
 /**
+ * Role name
  * @member {String} name
  */
 FormRole.prototype['name'] = undefined;

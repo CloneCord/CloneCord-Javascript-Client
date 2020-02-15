@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## createRoleUsingPOST
 
-> Role createRoleUsingPOST(guildId, opts)
+> Role createRoleUsingPOST(guildId, role)
 
 Creates a new Role in specified Guild if current User has permissions
 
@@ -29,10 +29,8 @@ JWT.apiKey = 'YOUR API KEY';
 
 let apiInstance = new CloneCordApi.RolesApi();
 let guildId = null; // String | ID of the specified Guild
-let opts = {
-  'role': new CloneCordApi.FormRole() // FormRole | Role data
-};
-apiInstance.createRoleUsingPOST(guildId, opts, (error, data, response) => {
+let role = new CloneCordApi.FormRole(); // FormRole | Role data
+apiInstance.createRoleUsingPOST(guildId, role, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -47,7 +45,7 @@ apiInstance.createRoleUsingPOST(guildId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **role** | [**FormRole**](FormRole.md)| Role data | [optional] 
+ **role** | [**FormRole**](FormRole.md)| Role data | 
 
 ### Return type
 
@@ -116,7 +114,7 @@ null (empty response body)
 
 ## updateRoleUsingPUT
 
-> Role updateRoleUsingPUT(guildId, roleId, opts)
+> Role updateRoleUsingPUT(guildId, roleId, role)
 
 Updates specified Role in specified Guild if current User has permissions
 
@@ -134,10 +132,8 @@ JWT.apiKey = 'YOUR API KEY';
 let apiInstance = new CloneCordApi.RolesApi();
 let guildId = null; // String | ID of the specified Guild
 let roleId = null; // String | roleId
-let opts = {
-  'role': new CloneCordApi.FormRole() // FormRole | New role data
-};
-apiInstance.updateRoleUsingPUT(guildId, roleId, opts, (error, data, response) => {
+let role = new CloneCordApi.FormRole(); // FormRole | New role data
+apiInstance.updateRoleUsingPUT(guildId, roleId, role, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -153,7 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
  **roleId** | [**String**](.md)| roleId | 
- **role** | [**FormRole**](FormRole.md)| New role data | [optional] 
+ **role** | [**FormRole**](FormRole.md)| New role data | 
 
 ### Return type
 
