@@ -1,6 +1,6 @@
 # CloneCordApi.GuildsApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,39 +10,37 @@ Method | HTTP request | Description
 [**updateGuildUsingPUT**](GuildsApi.md#updateGuildUsingPUT) | **PUT** /guilds/{guildId} | Updates an owned Guild
 
 
-<a name="createGuildUsingPOST"></a>
-# **createGuildUsingPOST**
+
+## createGuildUsingPOST
+
 > Guild createGuildUsingPOST(guild)
 
 Creates a new Guild
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsApi();
-
-var guild = new CloneCordApi.FormGuild(); // FormGuild | guild
-
-
-var callback = function(error, data, response) {
+let apiInstance = new CloneCordApi.GuildsApi();
+let guild = new CloneCordApi.FormGuild(); // FormGuild | guild
+apiInstance.createGuildUsingPOST(guild, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createGuildUsingPOST(guild, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,42 +56,40 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 
-<a name="deleteGuildUsingDELETE"></a>
-# **deleteGuildUsingDELETE**
+
+## deleteGuildUsingDELETE
+
 > deleteGuildUsingDELETE(guildId)
 
 Deletes an owned Guild
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-
-var callback = function(error, data, response) {
+let apiInstance = new CloneCordApi.GuildsApi();
+let guildId = null; // String | ID of the specified Guild
+apiInstance.deleteGuildUsingDELETE(guildId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteGuildUsingDELETE(guildId, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -109,42 +105,40 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getGuildInfoUsingGET"></a>
-# **getGuildInfoUsingGET**
+
+## getGuildInfoUsingGET
+
 > Guild getGuildInfoUsingGET(guildId)
 
 Gets info of a specific Guild
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-
-var callback = function(error, data, response) {
+let apiInstance = new CloneCordApi.GuildsApi();
+let guildId = null; // String | ID of the specified Guild
+apiInstance.getGuildInfoUsingGET(guildId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.getGuildInfoUsingGET(guildId, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -160,45 +154,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: */*
 
-<a name="updateGuildUsingPUT"></a>
-# **updateGuildUsingPUT**
+
+## updateGuildUsingPUT
+
 > Guild updateGuildUsingPUT(guildId, opts)
 
 Updates an owned Guild
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.GuildsApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var opts = { 
+let apiInstance = new CloneCordApi.GuildsApi();
+let guildId = null; // String | ID of the specified Guild
+let opts = {
   'newGuild': new CloneCordApi.FormGuild() // FormGuild | New guild data
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateGuildUsingPUT(guildId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateGuildUsingPUT(guildId, opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -215,6 +207,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 

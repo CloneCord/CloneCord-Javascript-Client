@@ -1,6 +1,7 @@
 # CloneCordApi.Guild
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **channels** | [**[Channel]**](Channel.md) |  | [optional] 

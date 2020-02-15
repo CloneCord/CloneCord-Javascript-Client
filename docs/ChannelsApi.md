@@ -1,6 +1,6 @@
 # CloneCordApi.ChannelsApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,42 +9,40 @@ Method | HTTP request | Description
 [**updateChannelUsingPUT**](ChannelsApi.md#updateChannelUsingPUT) | **PUT** /guilds/{guildId}/{channelId} | Updates specified Channel if current User has permissions
 
 
-<a name="createChannelUsingPOST"></a>
-# **createChannelUsingPOST**
+
+## createChannelUsingPOST
+
 > Channel createChannelUsingPOST(guildId, opts)
 
 Creates a new Channel in specified Guild
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.ChannelsApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var opts = { 
+let apiInstance = new CloneCordApi.ChannelsApi();
+let guildId = null; // String | ID of the specified Guild
+let opts = {
   'channel': new CloneCordApi.FormChannel() // FormChannel | Channel data
 };
-
-var callback = function(error, data, response) {
+apiInstance.createChannelUsingPOST(guildId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createChannelUsingPOST(guildId, opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -61,44 +59,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 
-<a name="deleteChannelUsingDELETE"></a>
-# **deleteChannelUsingDELETE**
+
+## deleteChannelUsingDELETE
+
 > deleteChannelUsingDELETE(channelId, guildId)
 
 Deletes specified Channel if current User has permissions
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.ChannelsApi();
-
-var channelId = "channelId_example"; // String | ID of the specified Channel
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-
-var callback = function(error, data, response) {
+let apiInstance = new CloneCordApi.ChannelsApi();
+let channelId = null; // String | ID of the specified Channel
+let guildId = null; // String | ID of the specified Guild
+apiInstance.deleteChannelUsingDELETE(channelId, guildId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteChannelUsingDELETE(channelId, guildId, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,47 +110,44 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="updateChannelUsingPUT"></a>
-# **updateChannelUsingPUT**
+
+## updateChannelUsingPUT
+
 > Channel updateChannelUsingPUT(channelId, guildId, opts)
 
 Updates specified Channel if current User has permissions
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.ChannelsApi();
-
-var channelId = "channelId_example"; // String | ID of the specified Channel
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var opts = { 
+let apiInstance = new CloneCordApi.ChannelsApi();
+let channelId = null; // String | ID of the specified Channel
+let guildId = null; // String | ID of the specified Guild
+let opts = {
   'channel': new CloneCordApi.FormChannel() // FormChannel | New channel data
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateChannelUsingPUT(channelId, guildId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateChannelUsingPUT(channelId, guildId, opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -173,6 +165,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 

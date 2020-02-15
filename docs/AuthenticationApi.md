@@ -1,6 +1,6 @@
 # CloneCordApi.AuthenticationApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,33 +8,33 @@ Method | HTTP request | Description
 [**signUpUsingPOST**](AuthenticationApi.md#signUpUsingPOST) | **POST** /auth/register | Create an account
 
 
-<a name="loginUsingPOST"></a>
-# **loginUsingPOST**
+
+## loginUsingPOST
+
 > loginUsingPOST(opts)
 
 Log in
 
 ### Example
+
 ```javascript
-var CloneCordApi = require('clone_cord_api');
+import CloneCordApi from 'clone_cord_api';
 
-var apiInstance = new CloneCordApi.AuthenticationApi();
-
-var opts = { 
+let apiInstance = new CloneCordApi.AuthenticationApi();
+let opts = {
   'user': new CloneCordApi.FormLogin() // FormLogin | Login data
 };
-
-var callback = function(error, data, response) {
+apiInstance.loginUsingPOST(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.loginUsingPOST(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,36 +50,36 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="signUpUsingPOST"></a>
-# **signUpUsingPOST**
+
+## signUpUsingPOST
+
 > User signUpUsingPOST(opts)
 
 Create an account
 
 ### Example
+
 ```javascript
-var CloneCordApi = require('clone_cord_api');
+import CloneCordApi from 'clone_cord_api';
 
-var apiInstance = new CloneCordApi.AuthenticationApi();
-
-var opts = { 
+let apiInstance = new CloneCordApi.AuthenticationApi();
+let opts = {
   'registrationData': new CloneCordApi.RegistrationUser() // RegistrationUser | authData
 };
-
-var callback = function(error, data, response) {
+apiInstance.signUpUsingPOST(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.signUpUsingPOST(opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -95,6 +95,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 

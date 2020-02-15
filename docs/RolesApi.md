@@ -1,6 +1,6 @@
 # CloneCordApi.RolesApi
 
-All URIs are relative to *https://localhost:8080*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,42 +9,40 @@ Method | HTTP request | Description
 [**updateRoleUsingPUT**](RolesApi.md#updateRoleUsingPUT) | **PUT** /guilds/{guildId}/roles/{roleId} | Updates specified Role in specified Guild if current User has permissions
 
 
-<a name="createRoleUsingPOST"></a>
-# **createRoleUsingPOST**
+
+## createRoleUsingPOST
+
 > Role createRoleUsingPOST(guildId, opts)
 
 Creates a new Role in specified Guild if current User has permissions
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.RolesApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var opts = { 
+let apiInstance = new CloneCordApi.RolesApi();
+let guildId = null; // String | ID of the specified Guild
+let opts = {
   'role': new CloneCordApi.FormRole() // FormRole | Role data
 };
-
-var callback = function(error, data, response) {
+apiInstance.createRoleUsingPOST(guildId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createRoleUsingPOST(guildId, opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -61,44 +59,41 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 
-<a name="deleteRoleUsingDELETE"></a>
-# **deleteRoleUsingDELETE**
+
+## deleteRoleUsingDELETE
+
 > deleteRoleUsingDELETE(guildId, roleId)
 
 Deletes specified Role in specified Guild if current User has permissions
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.RolesApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var roleId = "roleId_example"; // String | ID of the specified Role
-
-
-var callback = function(error, data, response) {
+let apiInstance = new CloneCordApi.RolesApi();
+let guildId = null; // String | ID of the specified Guild
+let roleId = null; // String | ID of the specified Role
+apiInstance.deleteRoleUsingDELETE(guildId, roleId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteRoleUsingDELETE(guildId, roleId, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,47 +110,44 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="updateRoleUsingPUT"></a>
-# **updateRoleUsingPUT**
+
+## updateRoleUsingPUT
+
 > Role updateRoleUsingPUT(guildId, roleId, opts)
 
 Updates specified Role in specified Guild if current User has permissions
 
 ### Example
-```javascript
-var CloneCordApi = require('clone_cord_api');
-var defaultClient = CloneCordApi.ApiClient.instance;
 
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
 // Configure API key authorization: JWT
-var JWT = defaultClient.authentications['JWT'];
+let JWT = defaultClient.authentications['JWT'];
 JWT.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //JWT.apiKeyPrefix = 'Token';
 
-var apiInstance = new CloneCordApi.RolesApi();
-
-var guildId = "guildId_example"; // String | ID of the specified Guild
-
-var roleId = "roleId_example"; // String | roleId
-
-var opts = { 
+let apiInstance = new CloneCordApi.RolesApi();
+let guildId = null; // String | ID of the specified Guild
+let roleId = null; // String | roleId
+let opts = {
   'role': new CloneCordApi.FormRole() // FormRole | New role data
 };
-
-var callback = function(error, data, response) {
+apiInstance.updateRoleUsingPUT(guildId, roleId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateRoleUsingPUT(guildId, roleId, opts, callback);
+});
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -173,6 +165,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: */*
 
