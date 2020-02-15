@@ -1,6 +1,6 @@
 {
   "name": "clone_cord_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "REST_API_to_use_CloneCord",
   "license": "GPL",
   "main": "src/index.js",
