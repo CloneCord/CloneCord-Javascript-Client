@@ -22,9 +22,9 @@ class RegistrationUser {
     /**
      * Constructs a new <code>RegistrationUser</code>.
      * @alias module:model/RegistrationUser
-     * @param email {String} User email
-     * @param password {String} User password
-     * @param username {String} User name
+     * @param email {String} 
+     * @param password {String} 
+     * @param username {String} 
      */
     constructor(email, password, username) { 
         
@@ -70,19 +70,16 @@ class RegistrationUser {
 }
 
 /**
- * User email
  * @member {String} email
  */
 RegistrationUser.prototype['email'] = undefined;
 
 /**
- * User password
  * @member {String} password
  */
 RegistrationUser.prototype['password'] = undefined;
 
 /**
- * User name
  * @member {String} username
  */
 RegistrationUser.prototype['username'] = undefined;

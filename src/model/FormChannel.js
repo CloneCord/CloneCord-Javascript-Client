@@ -22,7 +22,7 @@ class FormChannel {
     /**
      * Constructs a new <code>FormChannel</code>.
      * @alias module:model/FormChannel
-     * @param name {String} Channel name
+     * @param name {String} 
      */
     constructor(name) { 
         
@@ -60,7 +60,6 @@ class FormChannel {
 }
 
 /**
- * Channel name
  * @member {String} name
  */
 FormChannel.prototype['name'] = undefined;

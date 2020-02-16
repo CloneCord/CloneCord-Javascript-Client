@@ -22,8 +22,8 @@ class Role {
     /**
      * Constructs a new <code>Role</code>.
      * @alias module:model/Role
-     * @param hexColor {String} Role color
-     * @param name {String} Role name
+     * @param hexColor {String} 
+     * @param name {String} 
      */
     constructor(hexColor, name) { 
         
@@ -68,7 +68,6 @@ class Role {
 }
 
 /**
- * Role color
  * @member {String} hexColor
  */
 Role.prototype['hexColor'] = undefined;
@@ -79,7 +78,6 @@ Role.prototype['hexColor'] = undefined;
 Role.prototype['id'] = undefined;
 
 /**
- * Role name
  * @member {String} name
  */
 Role.prototype['name'] = undefined;

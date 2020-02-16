@@ -23,7 +23,7 @@ class Message {
     /**
      * Constructs a new <code>Message</code>.
      * @alias module:model/Message
-     * @param message {String} Message content
+     * @param message {String} 
      */
     constructor(message) { 
         
@@ -86,7 +86,6 @@ Message.prototype['channelId'] = undefined;
 Message.prototype['id'] = undefined;
 
 /**
- * Message content
  * @member {String} message
  */
 Message.prototype['message'] = undefined;

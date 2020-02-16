@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hexColor** | **String** | Role color | 
-**name** | **String** | Role name | 
+**hexColor** | **String** |  | 
+**name** | **String** |  | 
 
 

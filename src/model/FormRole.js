@@ -22,8 +22,8 @@ class FormRole {
     /**
      * Constructs a new <code>FormRole</code>.
      * @alias module:model/FormRole
-     * @param hexColor {String} Role color
-     * @param name {String} Role name
+     * @param hexColor {String} 
+     * @param name {String} 
      */
     constructor(hexColor, name) { 
         
@@ -65,13 +65,11 @@ class FormRole {
 }
 
 /**
- * Role color
  * @member {String} hexColor
  */
 FormRole.prototype['hexColor'] = undefined;
 
 /**
- * Role name
  * @member {String} name
  */
 FormRole.prototype['name'] = undefined;

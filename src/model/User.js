@@ -22,7 +22,7 @@ class User {
     /**
      * Constructs a new <code>User</code>.
      * @alias module:model/User
-     * @param username {String} User name
+     * @param username {String} 
      */
     constructor(username) { 
         
@@ -66,7 +66,6 @@ class User {
 }
 
 /**
- * User avatar
  * @member {String} avatar
  */
 User.prototype['avatar'] = undefined;
@@ -77,7 +76,6 @@ User.prototype['avatar'] = undefined;
 User.prototype['id'] = undefined;
 
 /**
- * User name
  * @member {String} username
  */
 User.prototype['username'] = undefined;

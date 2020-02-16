@@ -22,7 +22,7 @@ class FormUser {
     /**
      * Constructs a new <code>FormUser</code>.
      * @alias module:model/FormUser
-     * @param username {String} User name
+     * @param username {String} 
      */
     constructor(username) { 
         
@@ -63,13 +63,11 @@ class FormUser {
 }
 
 /**
- * User avatar
  * @member {String} avatar
  */
 FormUser.prototype['avatar'] = undefined;
 
 /**
- * User name
  * @member {String} username
  */
 FormUser.prototype['username'] = undefined;

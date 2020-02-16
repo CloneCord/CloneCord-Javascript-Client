@@ -22,7 +22,7 @@ class FormMessage {
     /**
      * Constructs a new <code>FormMessage</code>.
      * @alias module:model/FormMessage
-     * @param message {String} Message content
+     * @param message {String} 
      */
     constructor(message) { 
         
@@ -60,7 +60,6 @@ class FormMessage {
 }
 
 /**
- * Message content
  * @member {String} message
  */
 FormMessage.prototype['message'] = undefined;

@@ -25,7 +25,7 @@ class Guild {
     /**
      * Constructs a new <code>Guild</code>.
      * @alias module:model/Guild
-     * @param name {String} Guild name
+     * @param name {String} 
      */
     constructor(name) { 
         
@@ -90,7 +90,6 @@ Guild.prototype['id'] = undefined;
 Guild.prototype['members'] = undefined;
 
 /**
- * Guild name
  * @member {String} name
  */
 Guild.prototype['name'] = undefined;

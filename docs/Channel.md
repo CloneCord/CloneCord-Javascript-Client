@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **channelId** | **String** |  | [optional] 
-**name** | **String** | Channel name | 
+**name** | **String** |  | 
 
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hexColor** | **String** | Role color | 
+**hexColor** | **String** |  | 
 **id** | **String** |  | [optional] 
-**name** | **String** | Role name | 
+**name** | **String** |  | 
 
 

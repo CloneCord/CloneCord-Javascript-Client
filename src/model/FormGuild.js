@@ -22,7 +22,7 @@ class FormGuild {
     /**
      * Constructs a new <code>FormGuild</code>.
      * @alias module:model/FormGuild
-     * @param name {String} Guild name
+     * @param name {String} 
      */
     constructor(name) { 
         
@@ -60,7 +60,6 @@ class FormGuild {
 }
 
 /**
- * Guild name
  * @member {String} name
  */
 FormGuild.prototype['name'] = undefined;

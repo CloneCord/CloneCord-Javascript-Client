@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | **String** | User avatar | [optional] 
+**avatar** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**username** | **String** | User name | 
+**username** | **String** |  | 
 
 

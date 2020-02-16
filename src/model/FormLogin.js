@@ -22,8 +22,8 @@ class FormLogin {
     /**
      * Constructs a new <code>FormLogin</code>.
      * @alias module:model/FormLogin
-     * @param email {String} User email
-     * @param password {String} User password
+     * @param email {String} 
+     * @param password {String} 
      */
     constructor(email, password) { 
         
@@ -65,13 +65,11 @@ class FormLogin {
 }
 
 /**
- * User email
  * @member {String} email
  */
 FormLogin.prototype['email'] = undefined;
 
 /**
- * User password
  * @member {String} password
  */
 FormLogin.prototype['password'] = undefined;

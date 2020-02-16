@@ -22,7 +22,7 @@ class Channel {
     /**
      * Constructs a new <code>Channel</code>.
      * @alias module:model/Channel
-     * @param name {String} Channel name
+     * @param name {String} 
      */
     constructor(name) { 
         
@@ -68,7 +68,6 @@ class Channel {
 Channel.prototype['channelId'] = undefined;
 
 /**
- * Channel name
  * @member {String} name
  */
 Channel.prototype['name'] = undefined;
