@@ -19,7 +19,7 @@ import FormChannel from '../model/FormChannel';
 /**
 * Channels service.
 * @module api/ChannelsApi
-* @version 1.0.1
+* @version 1.0.6
 */
 export default class ChannelsApi {
 

@@ -19,7 +19,7 @@ import Guild from '../model/Guild';
 /**
 * Guilds service.
 * @module api/GuildsApi
-* @version 1.0.1
+* @version 1.0.6
 */
 export default class GuildsApi {
 

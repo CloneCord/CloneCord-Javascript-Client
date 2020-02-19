@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 set -e
-
+if [ -z "$1" ]
+  then
+    echo "No argument supplied"
+    false
+fi
 rm -rf src
 rm -rf test
 rm -rf docs

@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.0.1
+ * @version 1.0.6
  */
 class Member {
     /**

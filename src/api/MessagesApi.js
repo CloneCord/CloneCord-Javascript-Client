@@ -19,7 +19,7 @@ import Message from '../model/Message';
 /**
 * Messages service.
 * @module api/MessagesApi
-* @version 1.0.1
+* @version 1.0.6
 */
 export default class MessagesApi {
 

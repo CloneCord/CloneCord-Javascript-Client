@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Channel model module.
  * @module model/Channel
- * @version 1.0.1
+ * @version 1.0.6
  */
 class Channel {
     /**
