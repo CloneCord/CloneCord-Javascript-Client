@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property owner (base name: "owner")', function() {
-      // uncomment below and update the code to test the property owner
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
       //var instane = new CloneCordApi.Member();
       //expect(instance).to.be();
     });
@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
+    it('should have the property owner (base name: "owner")', function() {
+      // uncomment below and update the code to test the property owner
       //var instane = new CloneCordApi.Member();
       //expect(instance).to.be();
     });

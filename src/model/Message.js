@@ -17,7 +17,7 @@ import Reaction from './Reaction';
 /**
  * The Message model module.
  * @module model/Message
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Message {
     /**
@@ -50,23 +50,23 @@ class Message {
         if (data) {
             obj = obj || new Message();
 
-            if (data.hasOwnProperty('channelId')) {
-                obj['channelId'] = ApiClient.convertToType(data['channelId'], 'String');
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('message')) {
-                obj['message'] = ApiClient.convertToType(data['message'], 'String');
-            }
-            if (data.hasOwnProperty('reactionList')) {
-                obj['reactionList'] = ApiClient.convertToType(data['reactionList'], [Reaction]);
+            if (data.hasOwnProperty('sentDate')) {
+                obj['sentDate'] = ApiClient.convertToType(data['sentDate'], 'Date');
             }
             if (data.hasOwnProperty('senderId')) {
                 obj['senderId'] = ApiClient.convertToType(data['senderId'], 'String');
             }
-            if (data.hasOwnProperty('sentDate')) {
-                obj['sentDate'] = ApiClient.convertToType(data['sentDate'], 'Date');
+            if (data.hasOwnProperty('channelId')) {
+                obj['channelId'] = ApiClient.convertToType(data['channelId'], 'String');
+            }
+            if (data.hasOwnProperty('reactionList')) {
+                obj['reactionList'] = ApiClient.convertToType(data['reactionList'], [Reaction]);
             }
         }
         return obj;
@@ -76,9 +76,9 @@ class Message {
 }
 
 /**
- * @member {String} channelId
+ * @member {String} message
  */
-Message.prototype['channelId'] = undefined;
+Message.prototype['message'] = undefined;
 
 /**
  * @member {String} id
@@ -86,14 +86,9 @@ Message.prototype['channelId'] = undefined;
 Message.prototype['id'] = undefined;
 
 /**
- * @member {String} message
+ * @member {Date} sentDate
  */
-Message.prototype['message'] = undefined;
-
-/**
- * @member {Array.<module:model/Reaction>} reactionList
- */
-Message.prototype['reactionList'] = undefined;
+Message.prototype['sentDate'] = undefined;
 
 /**
  * @member {String} senderId
@@ -101,9 +96,14 @@ Message.prototype['reactionList'] = undefined;
 Message.prototype['senderId'] = undefined;
 
 /**
- * @member {Date} sentDate
+ * @member {String} channelId
  */
-Message.prototype['sentDate'] = undefined;
+Message.prototype['channelId'] = undefined;
+
+/**
+ * @member {Array.<module:model/Reaction>} reactionList
+ */
+Message.prototype['reactionList'] = undefined;
 
 
 

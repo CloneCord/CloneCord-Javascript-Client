@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(CloneCordApi.FormRole);
     });
 
-    it('should have the property hexColor (base name: "hexColor")', function() {
-      // uncomment below and update the code to test the property hexColor
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CloneCordApi.FormRole();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property hexColor (base name: "hexColor")', function() {
+      // uncomment below and update the code to test the property hexColor
       //var instane = new CloneCordApi.FormRole();
       //expect(instance).to.be();
     });

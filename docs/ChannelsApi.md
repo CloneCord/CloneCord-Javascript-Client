@@ -4,15 +4,17 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChannelUsingPOST**](ChannelsApi.md#createChannelUsingPOST) | **POST** /guilds/{guildId} | Creates a new Channel in specified Guild
-[**deleteChannelUsingDELETE**](ChannelsApi.md#deleteChannelUsingDELETE) | **DELETE** /guilds/{guildId}/{channelId} | Deletes specified Channel if current User has permissions
-[**updateChannelUsingPUT**](ChannelsApi.md#updateChannelUsingPUT) | **PUT** /guilds/{guildId}/{channelId} | Updates specified Channel if current User has permissions
+[**createChannel**](ChannelsApi.md#createChannel) | **POST** /guilds/{guildId} | 
+[**deleteChannel**](ChannelsApi.md#deleteChannel) | **DELETE** /guilds/{guildId}/{channelId} | 
+[**updateChannel**](ChannelsApi.md#updateChannel) | **PUT** /guilds/{guildId}/{channelId} | 
 
 
 
-## createChannelUsingPOST
+## createChannel
 
-> Channel createChannelUsingPOST(guildId, channel)
+> Channel createChannel(guildId, formChannel)
+
+
 
 Creates a new Channel in specified Guild
 
@@ -21,16 +23,16 @@ Creates a new Channel in specified Guild
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.ChannelsApi();
 let guildId = null; // String | ID of the specified Guild
-let channel = new CloneCordApi.FormChannel(); // FormChannel | Channel data
-apiInstance.createChannelUsingPOST(guildId, channel, (error, data, response) => {
+let formChannel = new CloneCordApi.FormChannel(); // FormChannel | Channel data
+apiInstance.createChannel(guildId, formChannel, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +47,7 @@ apiInstance.createChannelUsingPOST(guildId, channel, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| Channel data | 
+ **formChannel** | [**FormChannel**](FormChannel.md)| Channel data | 
 
 ### Return type
 
@@ -53,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -61,9 +63,11 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## deleteChannelUsingDELETE
+## deleteChannel
 
-> deleteChannelUsingDELETE(channelId, guildId)
+> deleteChannel(guildId, channelId)
+
+
 
 Deletes specified Channel if current User has permissions
 
@@ -72,16 +76,16 @@ Deletes specified Channel if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.ChannelsApi();
-let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
-apiInstance.deleteChannelUsingDELETE(channelId, guildId, (error, data, response) => {
+let channelId = null; // String | ID of the specified Channel
+apiInstance.deleteChannel(guildId, channelId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -95,8 +99,8 @@ apiInstance.deleteChannelUsingDELETE(channelId, guildId, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
 
 ### Return type
 
@@ -104,7 +108,7 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -112,9 +116,11 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## updateChannelUsingPUT
+## updateChannel
 
-> Channel updateChannelUsingPUT(channelId, guildId, channel)
+> Channel updateChannel(guildId, channelId, formChannel)
+
+
 
 Updates specified Channel if current User has permissions
 
@@ -123,17 +129,17 @@ Updates specified Channel if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.ChannelsApi();
-let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
-let channel = new CloneCordApi.FormChannel(); // FormChannel | New channel data
-apiInstance.updateChannelUsingPUT(channelId, guildId, channel, (error, data, response) => {
+let channelId = null; // String | ID of the specified Channel
+let formChannel = new CloneCordApi.FormChannel(); // FormChannel | New channel data
+apiInstance.updateChannel(guildId, channelId, formChannel, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -147,9 +153,9 @@ apiInstance.updateChannelUsingPUT(channelId, guildId, channel, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **channel** | [**FormChannel**](FormChannel.md)| New channel data | 
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
+ **formChannel** | [**FormChannel**](FormChannel.md)| New channel data | 
 
 ### Return type
 
@@ -157,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 

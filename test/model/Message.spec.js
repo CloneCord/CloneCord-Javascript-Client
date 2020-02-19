@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(CloneCordApi.Message);
     });
 
-    it('should have the property channelId (base name: "channelId")', function() {
-      // uncomment below and update the code to test the property channelId
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
       //var instane = new CloneCordApi.Message();
       //expect(instance).to.be();
     });
@@ -66,14 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CloneCordApi.Message();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reactionList (base name: "reactionList")', function() {
-      // uncomment below and update the code to test the property reactionList
+    it('should have the property sentDate (base name: "sentDate")', function() {
+      // uncomment below and update the code to test the property sentDate
       //var instane = new CloneCordApi.Message();
       //expect(instance).to.be();
     });
@@ -84,8 +78,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sentDate (base name: "sentDate")', function() {
-      // uncomment below and update the code to test the property sentDate
+    it('should have the property channelId (base name: "channelId")', function() {
+      // uncomment below and update the code to test the property channelId
+      //var instane = new CloneCordApi.Message();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reactionList (base name: "reactionList")', function() {
+      // uncomment below and update the code to test the property reactionList
       //var instane = new CloneCordApi.Message();
       //expect(instance).to.be();
     });

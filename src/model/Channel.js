@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Channel model module.
  * @module model/Channel
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Channel {
     /**
@@ -49,11 +49,11 @@ class Channel {
         if (data) {
             obj = obj || new Channel();
 
-            if (data.hasOwnProperty('channelId')) {
-                obj['channelId'] = ApiClient.convertToType(data['channelId'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('channelId')) {
+                obj['channelId'] = ApiClient.convertToType(data['channelId'], 'String');
             }
         }
         return obj;
@@ -63,14 +63,14 @@ class Channel {
 }
 
 /**
- * @member {String} channelId
- */
-Channel.prototype['channelId'] = undefined;
-
-/**
  * @member {String} name
  */
 Channel.prototype['name'] = undefined;
+
+/**
+ * @member {String} channelId
+ */
+Channel.prototype['channelId'] = undefined;
 
 
 

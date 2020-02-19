@@ -4,15 +4,17 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRoleUsingPOST**](RolesApi.md#createRoleUsingPOST) | **POST** /guilds/{guildId}/roles | Creates a new Role in specified Guild if current User has permissions
-[**deleteRoleUsingDELETE**](RolesApi.md#deleteRoleUsingDELETE) | **DELETE** /guilds/{guildId}/roles/{roleId} | Deletes specified Role in specified Guild if current User has permissions
-[**updateRoleUsingPUT**](RolesApi.md#updateRoleUsingPUT) | **PUT** /guilds/{guildId}/roles/{roleId} | Updates specified Role in specified Guild if current User has permissions
+[**createRole**](RolesApi.md#createRole) | **POST** /guilds/{guildId}/roles | 
+[**deleteRole**](RolesApi.md#deleteRole) | **DELETE** /guilds/{guildId}/roles/{roleId} | 
+[**updateRole**](RolesApi.md#updateRole) | **PUT** /guilds/{guildId}/roles/{roleId} | 
 
 
 
-## createRoleUsingPOST
+## createRole
 
-> Role createRoleUsingPOST(guildId, role)
+> Role createRole(guildId, formRole)
+
+
 
 Creates a new Role in specified Guild if current User has permissions
 
@@ -21,16 +23,16 @@ Creates a new Role in specified Guild if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.RolesApi();
 let guildId = null; // String | ID of the specified Guild
-let role = new CloneCordApi.FormRole(); // FormRole | Role data
-apiInstance.createRoleUsingPOST(guildId, role, (error, data, response) => {
+let formRole = new CloneCordApi.FormRole(); // FormRole | Role data
+apiInstance.createRole(guildId, formRole, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,7 +47,7 @@ apiInstance.createRoleUsingPOST(guildId, role, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **role** | [**FormRole**](FormRole.md)| Role data | 
+ **formRole** | [**FormRole**](FormRole.md)| Role data | 
 
 ### Return type
 
@@ -53,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -61,9 +63,11 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## deleteRoleUsingDELETE
+## deleteRole
 
-> deleteRoleUsingDELETE(guildId, roleId)
+> deleteRole(guildId, roleId)
+
+
 
 Deletes specified Role in specified Guild if current User has permissions
 
@@ -72,16 +76,16 @@ Deletes specified Role in specified Guild if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.RolesApi();
 let guildId = null; // String | ID of the specified Guild
 let roleId = null; // String | ID of the specified Role
-apiInstance.deleteRoleUsingDELETE(guildId, roleId, (error, data, response) => {
+apiInstance.deleteRole(guildId, roleId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -104,7 +108,7 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -112,9 +116,11 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## updateRoleUsingPUT
+## updateRole
 
-> Role updateRoleUsingPUT(guildId, roleId, role)
+> Role updateRole(guildId, roleId, formRole)
+
+
 
 Updates specified Role in specified Guild if current User has permissions
 
@@ -123,17 +129,17 @@ Updates specified Role in specified Guild if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.RolesApi();
 let guildId = null; // String | ID of the specified Guild
-let roleId = null; // String | roleId
-let role = new CloneCordApi.FormRole(); // FormRole | New role data
-apiInstance.updateRoleUsingPUT(guildId, roleId, role, (error, data, response) => {
+let roleId = null; // String | 
+let formRole = new CloneCordApi.FormRole(); // FormRole | New role data
+apiInstance.updateRole(guildId, roleId, formRole, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -148,8 +154,8 @@ apiInstance.updateRoleUsingPUT(guildId, roleId, role, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **roleId** | [**String**](.md)| roleId | 
- **role** | [**FormRole**](FormRole.md)| New role data | 
+ **roleId** | [**String**](.md)|  | 
+ **formRole** | [**FormRole**](FormRole.md)| New role data | 
 
 ### Return type
 
@@ -157,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 

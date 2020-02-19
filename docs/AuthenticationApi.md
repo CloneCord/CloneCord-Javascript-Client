@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**loginUsingPOST**](AuthenticationApi.md#loginUsingPOST) | **POST** /auth/login | Log in
-[**signUpUsingPOST**](AuthenticationApi.md#signUpUsingPOST) | **POST** /auth/register | Create an account
+[**login**](AuthenticationApi.md#login) | **POST** /auth/login | Log in
+[**signUp**](AuthenticationApi.md#signUp) | **POST** /auth/register | Create an account
 
 
 
-## loginUsingPOST
+## login
 
-> loginUsingPOST(loginData)
+> login(opts)
 
 Log in
 
@@ -21,8 +21,10 @@ Log in
 import CloneCordApi from 'clone_cord_api';
 
 let apiInstance = new CloneCordApi.AuthenticationApi();
-let loginData = new CloneCordApi.FormLogin(); // FormLogin | loginData
-apiInstance.loginUsingPOST(loginData, (error, data, response) => {
+let opts = {
+  'formLogin': new CloneCordApi.FormLogin() // FormLogin | 
+};
+apiInstance.login(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -36,7 +38,7 @@ apiInstance.loginUsingPOST(loginData, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginData** | [**FormLogin**](FormLogin.md)| loginData | 
+ **formLogin** | [**FormLogin**](FormLogin.md)|  | [optional] 
 
 ### Return type
 
@@ -52,9 +54,9 @@ No authorization required
 - **Accept**: Not defined
 
 
-## signUpUsingPOST
+## signUp
 
-> User signUpUsingPOST(registrationData)
+> User signUp(opts)
 
 Create an account
 
@@ -64,8 +66,10 @@ Create an account
 import CloneCordApi from 'clone_cord_api';
 
 let apiInstance = new CloneCordApi.AuthenticationApi();
-let registrationData = new CloneCordApi.RegistrationUser(); // RegistrationUser | registrationData
-apiInstance.signUpUsingPOST(registrationData, (error, data, response) => {
+let opts = {
+  'registrationUser': new CloneCordApi.RegistrationUser() // RegistrationUser | 
+};
+apiInstance.signUp(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -79,7 +83,7 @@ apiInstance.signUpUsingPOST(registrationData, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registrationData** | [**RegistrationUser**](RegistrationUser.md)| registrationData | 
+ **registrationUser** | [**RegistrationUser**](RegistrationUser.md)|  | [optional] 
 
 ### Return type
 

@@ -4,15 +4,17 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMessageUsingDELETE**](MessagesApi.md#deleteMessageUsingDELETE) | **DELETE** /guilds/{guildId}/{channelId}/messages/{messageId} | Deletes specified message in specified Channel if current User has permissions
-[**getMessagesUsingGET**](MessagesApi.md#getMessagesUsingGET) | **GET** /guilds/{guildId}/{channelId}/messages | Gets a list of messages in specified Channel if current User has permissions
-[**sendMessageUsingPOST**](MessagesApi.md#sendMessageUsingPOST) | **POST** /guilds/{guildId}/{channelId}/messages | Sends a new message to specified Channel if current User has permissions
+[**deleteMessage**](MessagesApi.md#deleteMessage) | **DELETE** /guilds/{guildId}/{channelId}/messages/{messageId} | 
+[**getMessages**](MessagesApi.md#getMessages) | **GET** /guilds/{guildId}/{channelId}/messages | 
+[**sendMessage**](MessagesApi.md#sendMessage) | **POST** /guilds/{guildId}/{channelId}/messages | 
 
 
 
-## deleteMessageUsingDELETE
+## deleteMessage
 
-> deleteMessageUsingDELETE(channelId, guildId, messageId)
+> deleteMessage(guildId, channelId, messageId)
+
+
 
 Deletes specified message in specified Channel if current User has permissions
 
@@ -21,17 +23,17 @@ Deletes specified message in specified Channel if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.MessagesApi();
-let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
+let channelId = null; // String | ID of the specified Channel
 let messageId = null; // String | ID of the specified Message
-apiInstance.deleteMessageUsingDELETE(channelId, guildId, messageId, (error, data, response) => {
+apiInstance.deleteMessage(guildId, channelId, messageId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,8 +47,8 @@ apiInstance.deleteMessageUsingDELETE(channelId, guildId, messageId, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
  **messageId** | [**String**](.md)| ID of the specified Message | 
 
 ### Return type
@@ -55,7 +57,7 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -63,9 +65,11 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## getMessagesUsingGET
+## getMessages
 
-> [Message] getMessagesUsingGET(channelId, guildId, opts)
+> [Message] getMessages(guildId, channelId, opts)
+
+
 
 Gets a list of messages in specified Channel if current User has permissions
 
@@ -74,21 +78,21 @@ Gets a list of messages in specified Channel if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.MessagesApi();
-let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
+let channelId = null; // String | ID of the specified Channel
 let opts = {
-  'after': 789, // Number | Return only mesages after this timestamp
+  'limit': 56, // Number | Maximum number of messages to return (max = 100)
   'before': 789, // Number | Return only messages sent before this timestamp
-  'limit': 100 // Number | Maximum number of messages to return (max = 100)
+  'after': 789 // Number | Return only mesages after this timestamp
 };
-apiInstance.getMessagesUsingGET(channelId, guildId, opts, (error, data, response) => {
+apiInstance.getMessages(guildId, channelId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -102,11 +106,11 @@ apiInstance.getMessagesUsingGET(channelId, guildId, opts, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **after** | **Number**| Return only mesages after this timestamp | [optional] 
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
+ **limit** | **Number**| Maximum number of messages to return (max &#x3D; 100) | [optional] 
  **before** | **Number**| Return only messages sent before this timestamp | [optional] 
- **limit** | **Number**| Maximum number of messages to return (max &#x3D; 100) | [optional] [default to 100]
+ **after** | **Number**| Return only mesages after this timestamp | [optional] 
 
 ### Return type
 
@@ -114,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -122,9 +126,11 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## sendMessageUsingPOST
+## sendMessage
 
-> Message sendMessageUsingPOST(channelId, guildId, message)
+> Message sendMessage(guildId, channelId, formMessage)
+
+
 
 Sends a new message to specified Channel if current User has permissions
 
@@ -133,17 +139,17 @@ Sends a new message to specified Channel if current User has permissions
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.MessagesApi();
-let channelId = null; // String | ID of the specified Channel
 let guildId = null; // String | ID of the specified Guild
-let message = new CloneCordApi.FormMessage(); // FormMessage | Message data
-apiInstance.sendMessageUsingPOST(channelId, guildId, message, (error, data, response) => {
+let channelId = null; // String | ID of the specified Channel
+let formMessage = new CloneCordApi.FormMessage(); // FormMessage | Message data
+apiInstance.sendMessage(guildId, channelId, formMessage, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -157,9 +163,9 @@ apiInstance.sendMessageUsingPOST(channelId, guildId, message, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **channelId** | [**String**](.md)| ID of the specified Channel | 
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **message** | [**FormMessage**](FormMessage.md)| Message data | 
+ **channelId** | [**String**](.md)| ID of the specified Channel | 
+ **formMessage** | [**FormMessage**](FormMessage.md)| Message data | 
 
 ### Return type
 
@@ -167,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 

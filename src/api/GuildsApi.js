@@ -19,7 +19,7 @@ import Guild from '../model/Guild';
 /**
 * Guilds service.
 * @module api/GuildsApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class GuildsApi {
 
@@ -36,8 +36,8 @@ export default class GuildsApi {
 
 
     /**
-     * Callback function to receive the result of the createGuildUsingPOST operation.
-     * @callback module:api/GuildsApi~createGuildUsingPOSTCallback
+     * Callback function to receive the result of the createGuild operation.
+     * @callback module:api/GuildsApi~createGuildCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Guild} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -45,16 +45,14 @@ export default class GuildsApi {
 
     /**
      * Creates a new Guild
-     * @param {module:model/FormGuild} guild guild
-     * @param {module:api/GuildsApi~createGuildUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Object} opts Optional parameters
+     * @param {module:model/FormGuild} opts.formGuild 
+     * @param {module:api/GuildsApi~createGuildCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Guild}
      */
-    createGuildUsingPOST(guild, callback) {
-      let postBody = guild;
-      // verify the required parameter 'guild' is set
-      if (guild === undefined || guild === null) {
-        throw new Error("Missing the required parameter 'guild' when calling createGuildUsingPOST");
-      }
+    createGuild(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['formGuild'];
 
       let pathParams = {
       };
@@ -65,7 +63,7 @@ export default class GuildsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Guild;
@@ -77,8 +75,8 @@ export default class GuildsApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteGuildUsingDELETE operation.
-     * @callback module:api/GuildsApi~deleteGuildUsingDELETECallback
+     * Callback function to receive the result of the deleteGuild operation.
+     * @callback module:api/GuildsApi~deleteGuildCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -87,13 +85,13 @@ export default class GuildsApi {
     /**
      * Deletes an owned Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {module:api/GuildsApi~deleteGuildUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/GuildsApi~deleteGuildCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteGuildUsingDELETE(guildId, callback) {
+    deleteGuild(guildId, callback) {
       let postBody = null;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling deleteGuildUsingDELETE");
+        throw new Error("Missing the required parameter 'guildId' when calling deleteGuild");
       }
 
       let pathParams = {
@@ -106,7 +104,7 @@ export default class GuildsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -118,8 +116,8 @@ export default class GuildsApi {
     }
 
     /**
-     * Callback function to receive the result of the getGuildInfoUsingGET operation.
-     * @callback module:api/GuildsApi~getGuildInfoUsingGETCallback
+     * Callback function to receive the result of the getGuildInfo operation.
+     * @callback module:api/GuildsApi~getGuildInfoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Guild} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -128,14 +126,14 @@ export default class GuildsApi {
     /**
      * Gets info of a specific Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {module:api/GuildsApi~getGuildInfoUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/GuildsApi~getGuildInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Guild}
      */
-    getGuildInfoUsingGET(guildId, callback) {
+    getGuildInfo(guildId, callback) {
       let postBody = null;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling getGuildInfoUsingGET");
+        throw new Error("Missing the required parameter 'guildId' when calling getGuildInfo");
       }
 
       let pathParams = {
@@ -148,7 +146,7 @@ export default class GuildsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = Guild;
@@ -160,8 +158,8 @@ export default class GuildsApi {
     }
 
     /**
-     * Callback function to receive the result of the updateGuildUsingPUT operation.
-     * @callback module:api/GuildsApi~updateGuildUsingPUTCallback
+     * Callback function to receive the result of the updateGuild operation.
+     * @callback module:api/GuildsApi~updateGuildCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Guild} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -170,19 +168,19 @@ export default class GuildsApi {
     /**
      * Updates an owned Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {module:model/FormGuild} newGuild New guild data
-     * @param {module:api/GuildsApi~updateGuildUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/FormGuild} formGuild New guild data
+     * @param {module:api/GuildsApi~updateGuildCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Guild}
      */
-    updateGuildUsingPUT(guildId, newGuild, callback) {
-      let postBody = newGuild;
+    updateGuild(guildId, formGuild, callback) {
+      let postBody = formGuild;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling updateGuildUsingPUT");
+        throw new Error("Missing the required parameter 'guildId' when calling updateGuild");
       }
-      // verify the required parameter 'newGuild' is set
-      if (newGuild === undefined || newGuild === null) {
-        throw new Error("Missing the required parameter 'newGuild' when calling updateGuildUsingPUT");
+      // verify the required parameter 'formGuild' is set
+      if (formGuild === undefined || formGuild === null) {
+        throw new Error("Missing the required parameter 'formGuild' when calling updateGuild");
       }
 
       let pathParams = {
@@ -195,7 +193,7 @@ export default class GuildsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Guild;

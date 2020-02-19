@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(CloneCordApi.Guild);
     });
 
-    it('should have the property channels (base name: "channels")', function() {
-      // uncomment below and update the code to test the property channels
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CloneCordApi.Guild();
       //expect(instance).to.be();
     });
@@ -66,20 +66,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instane = new CloneCordApi.Guild();
+      //expect(instance).to.be();
+    });
+
     it('should have the property members (base name: "members")', function() {
       // uncomment below and update the code to test the property members
       //var instane = new CloneCordApi.Guild();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new CloneCordApi.Guild();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property roles (base name: "roles")', function() {
-      // uncomment below and update the code to test the property roles
+    it('should have the property channels (base name: "channels")', function() {
+      // uncomment below and update the code to test the property channels
       //var instane = new CloneCordApi.Guild();
       //expect(instance).to.be();
     });

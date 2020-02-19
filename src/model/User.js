@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The User model module.
  * @module model/User
- * @version 1.0.1
+ * @version 1.0.4
  */
 class User {
     /**
@@ -49,14 +49,14 @@ class User {
         if (data) {
             obj = obj || new User();
 
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
             if (data.hasOwnProperty('avatar')) {
                 obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
         }
         return obj;
@@ -64,6 +64,11 @@ class User {
 
 
 }
+
+/**
+ * @member {String} username
+ */
+User.prototype['username'] = undefined;
 
 /**
  * @member {String} avatar
@@ -74,11 +79,6 @@ User.prototype['avatar'] = undefined;
  * @member {String} id
  */
 User.prototype['id'] = undefined;
-
-/**
- * @member {String} username
- */
-User.prototype['username'] = undefined;
 
 
 

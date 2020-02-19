@@ -20,7 +20,7 @@ import User from '../model/User';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class UsersApi {
 
@@ -37,44 +37,8 @@ export default class UsersApi {
 
 
     /**
-     * Callback function to receive the result of the getSelfGuildsUsingGET operation.
-     * @callback module:api/UsersApi~getSelfGuildsUsingGETCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Guild>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Gets list of guilds the current User is a Member of
-     * @param {module:api/UsersApi~getSelfGuildsUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Guild>}
-     */
-    getSelfGuildsUsingGET(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['JWT'];
-      let contentTypes = [];
-      let accepts = ['*/*'];
-      let returnType = [Guild];
-      return this.apiClient.callApi(
-        '/users/@self/guilds', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getSelfUsingGET operation.
-     * @callback module:api/UsersApi~getSelfUsingGETCallback
+     * Callback function to receive the result of the getSelf operation.
+     * @callback module:api/UsersApi~getSelfCallback
      * @param {String} error Error message, if any.
      * @param {module:model/User} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -82,10 +46,10 @@ export default class UsersApi {
 
     /**
      * Gets information about current User
-     * @param {module:api/UsersApi~getSelfUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/UsersApi~getSelfCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    getSelfUsingGET(callback) {
+    getSelf(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -97,7 +61,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = User;
@@ -109,8 +73,44 @@ export default class UsersApi {
     }
 
     /**
-     * Callback function to receive the result of the getUserUsingGET operation.
-     * @callback module:api/UsersApi~getUserUsingGETCallback
+     * Callback function to receive the result of the getSelfGuilds operation.
+     * @callback module:api/UsersApi~getSelfGuildsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Guild>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets list of guilds the current User is a Member of
+     * @param {module:api/UsersApi~getSelfGuildsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Guild>}
+     */
+    getSelfGuilds(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['user-auth'];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = [Guild];
+      return this.apiClient.callApi(
+        '/users/@self/guilds', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getUser operation.
+     * @callback module:api/UsersApi~getUserCallback
      * @param {String} error Error message, if any.
      * @param {module:model/User} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -119,14 +119,14 @@ export default class UsersApi {
     /**
      * Gets information about specified User
      * @param {String} userId ID of the user whose data is requested
-     * @param {module:api/UsersApi~getUserUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/UsersApi~getUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    getUserUsingGET(userId, callback) {
+    getUser(userId, callback) {
       let postBody = null;
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling getUserUsingGET");
+        throw new Error("Missing the required parameter 'userId' when calling getUser");
       }
 
       let pathParams = {
@@ -139,7 +139,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = User;
@@ -151,8 +151,8 @@ export default class UsersApi {
     }
 
     /**
-     * Callback function to receive the result of the putSelfUsingPUT operation.
-     * @callback module:api/UsersApi~putSelfUsingPUTCallback
+     * Callback function to receive the result of the putSelf operation.
+     * @callback module:api/UsersApi~putSelfCallback
      * @param {String} error Error message, if any.
      * @param {module:model/User} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -160,15 +160,15 @@ export default class UsersApi {
 
     /**
      * Updates information about current User
-     * @param {module:model/FormUser} user New User data
-     * @param {module:api/UsersApi~putSelfUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/FormUser} formUser New User data
+     * @param {module:api/UsersApi~putSelfCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    putSelfUsingPUT(user, callback) {
-      let postBody = user;
-      // verify the required parameter 'user' is set
-      if (user === undefined || user === null) {
-        throw new Error("Missing the required parameter 'user' when calling putSelfUsingPUT");
+    putSelf(formUser, callback) {
+      let postBody = formUser;
+      // verify the required parameter 'formUser' is set
+      if (formUser === undefined || formUser === null) {
+        throw new Error("Missing the required parameter 'formUser' when calling putSelf");
       }
 
       let pathParams = {
@@ -180,7 +180,7 @@ export default class UsersApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = User;

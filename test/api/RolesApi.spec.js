@@ -48,30 +48,30 @@
   }
 
   describe('RolesApi', function() {
-    describe('createRoleUsingPOST', function() {
-      it('should call createRoleUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createRoleUsingPOST
-        //instance.createRoleUsingPOST(function(error) {
+    describe('createRole', function() {
+      it('should call createRole successfully', function(done) {
+        //uncomment below and update the code to test createRole
+        //instance.createRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteRoleUsingDELETE', function() {
-      it('should call deleteRoleUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteRoleUsingDELETE
-        //instance.deleteRoleUsingDELETE(function(error) {
+    describe('deleteRole', function() {
+      it('should call deleteRole successfully', function(done) {
+        //uncomment below and update the code to test deleteRole
+        //instance.deleteRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateRoleUsingPUT', function() {
-      it('should call updateRoleUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateRoleUsingPUT
-        //instance.updateRoleUsingPUT(function(error) {
+    describe('updateRole', function() {
+      it('should call updateRole successfully', function(done) {
+        //uncomment below and update the code to test updateRole
+        //instance.updateRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

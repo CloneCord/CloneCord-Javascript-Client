@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channelId** | **String** |  | [optional] 
-**id** | **String** |  | [optional] 
 **message** | **String** |  | 
-**reactionList** | [**[Reaction]**](Reaction.md) |  | [optional] 
-**senderId** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 **sentDate** | **Date** |  | [optional] 
+**senderId** | **String** |  | [optional] 
+**channelId** | **String** |  | [optional] 
+**reactionList** | [**[Reaction]**](Reaction.md) |  | [optional] 
 
 

@@ -48,20 +48,20 @@
   }
 
   describe('AuthenticationApi', function() {
-    describe('loginUsingPOST', function() {
-      it('should call loginUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test loginUsingPOST
-        //instance.loginUsingPOST(function(error) {
+    describe('login', function() {
+      it('should call login successfully', function(done) {
+        //uncomment below and update the code to test login
+        //instance.login(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('signUpUsingPOST', function() {
-      it('should call signUpUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test signUpUsingPOST
-        //instance.signUpUsingPOST(function(error) {
+    describe('signUp', function() {
+      it('should call signUp successfully', function(done) {
+        //uncomment below and update the code to test signUp
+        //instance.signUp(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(CloneCordApi.Reaction);
     });
 
-    it('should have the property authorUuid (base name: "authorUuid")', function() {
-      // uncomment below and update the code to test the property authorUuid
+    it('should have the property emoteId (base name: "emoteId")', function() {
+      // uncomment below and update the code to test the property emoteId
       //var instane = new CloneCordApi.Reaction();
       //expect(instance).to.be();
     });
 
-    it('should have the property emoteId (base name: "emoteId")', function() {
-      // uncomment below and update the code to test the property emoteId
+    it('should have the property authorUuid (base name: "authorUuid")', function() {
+      // uncomment below and update the code to test the property authorUuid
       //var instane = new CloneCordApi.Reaction();
       //expect(instance).to.be();
     });

@@ -19,7 +19,7 @@ import Message from '../model/Message';
 /**
 * Messages service.
 * @module api/MessagesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class MessagesApi {
 
@@ -36,8 +36,8 @@ export default class MessagesApi {
 
 
     /**
-     * Callback function to receive the result of the deleteMessageUsingDELETE operation.
-     * @callback module:api/MessagesApi~deleteMessageUsingDELETECallback
+     * Callback function to receive the result of the deleteMessage operation.
+     * @callback module:api/MessagesApi~deleteMessageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -45,29 +45,29 @@ export default class MessagesApi {
 
     /**
      * Deletes specified message in specified Channel if current User has permissions
-     * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
+     * @param {String} channelId ID of the specified Channel
      * @param {String} messageId ID of the specified Message
-     * @param {module:api/MessagesApi~deleteMessageUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MessagesApi~deleteMessageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteMessageUsingDELETE(channelId, guildId, messageId, callback) {
+    deleteMessage(guildId, channelId, messageId, callback) {
       let postBody = null;
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw new Error("Missing the required parameter 'channelId' when calling deleteMessageUsingDELETE");
-      }
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling deleteMessageUsingDELETE");
+        throw new Error("Missing the required parameter 'guildId' when calling deleteMessage");
+      }
+      // verify the required parameter 'channelId' is set
+      if (channelId === undefined || channelId === null) {
+        throw new Error("Missing the required parameter 'channelId' when calling deleteMessage");
       }
       // verify the required parameter 'messageId' is set
       if (messageId === undefined || messageId === null) {
-        throw new Error("Missing the required parameter 'messageId' when calling deleteMessageUsingDELETE");
+        throw new Error("Missing the required parameter 'messageId' when calling deleteMessage");
       }
 
       let pathParams = {
-        'channelId': channelId,
         'guildId': guildId,
+        'channelId': channelId,
         'messageId': messageId
       };
       let queryParams = {
@@ -77,7 +77,7 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -89,8 +89,8 @@ export default class MessagesApi {
     }
 
     /**
-     * Callback function to receive the result of the getMessagesUsingGET operation.
-     * @callback module:api/MessagesApi~getMessagesUsingGETCallback
+     * Callback function to receive the result of the getMessages operation.
+     * @callback module:api/MessagesApi~getMessagesCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/Message>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -98,42 +98,42 @@ export default class MessagesApi {
 
     /**
      * Gets a list of messages in specified Channel if current User has permissions
-     * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
+     * @param {String} channelId ID of the specified Channel
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.after Return only mesages after this timestamp
+     * @param {Number} opts.limit Maximum number of messages to return (max = 100)
      * @param {Number} opts.before Return only messages sent before this timestamp
-     * @param {Number} opts.limit Maximum number of messages to return (max = 100) (default to 100)
-     * @param {module:api/MessagesApi~getMessagesUsingGETCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} opts.after Return only mesages after this timestamp
+     * @param {module:api/MessagesApi~getMessagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Message>}
      */
-    getMessagesUsingGET(channelId, guildId, opts, callback) {
+    getMessages(guildId, channelId, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw new Error("Missing the required parameter 'channelId' when calling getMessagesUsingGET");
-      }
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling getMessagesUsingGET");
+        throw new Error("Missing the required parameter 'guildId' when calling getMessages");
+      }
+      // verify the required parameter 'channelId' is set
+      if (channelId === undefined || channelId === null) {
+        throw new Error("Missing the required parameter 'channelId' when calling getMessages");
       }
 
       let pathParams = {
-        'channelId': channelId,
-        'guildId': guildId
+        'guildId': guildId,
+        'channelId': channelId
       };
       let queryParams = {
-        'after': opts['after'],
+        'limit': opts['limit'],
         'before': opts['before'],
-        'limit': opts['limit']
+        'after': opts['after']
       };
       let headerParams = {
       };
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [Message];
@@ -145,8 +145,8 @@ export default class MessagesApi {
     }
 
     /**
-     * Callback function to receive the result of the sendMessageUsingPOST operation.
-     * @callback module:api/MessagesApi~sendMessageUsingPOSTCallback
+     * Callback function to receive the result of the sendMessage operation.
+     * @callback module:api/MessagesApi~sendMessageCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Message} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -154,30 +154,30 @@ export default class MessagesApi {
 
     /**
      * Sends a new message to specified Channel if current User has permissions
-     * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
-     * @param {module:model/FormMessage} message Message data
-     * @param {module:api/MessagesApi~sendMessageUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} channelId ID of the specified Channel
+     * @param {module:model/FormMessage} formMessage Message data
+     * @param {module:api/MessagesApi~sendMessageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Message}
      */
-    sendMessageUsingPOST(channelId, guildId, message, callback) {
-      let postBody = message;
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw new Error("Missing the required parameter 'channelId' when calling sendMessageUsingPOST");
-      }
+    sendMessage(guildId, channelId, formMessage, callback) {
+      let postBody = formMessage;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling sendMessageUsingPOST");
+        throw new Error("Missing the required parameter 'guildId' when calling sendMessage");
       }
-      // verify the required parameter 'message' is set
-      if (message === undefined || message === null) {
-        throw new Error("Missing the required parameter 'message' when calling sendMessageUsingPOST");
+      // verify the required parameter 'channelId' is set
+      if (channelId === undefined || channelId === null) {
+        throw new Error("Missing the required parameter 'channelId' when calling sendMessage");
+      }
+      // verify the required parameter 'formMessage' is set
+      if (formMessage === undefined || formMessage === null) {
+        throw new Error("Missing the required parameter 'formMessage' when calling sendMessage");
       }
 
       let pathParams = {
-        'channelId': channelId,
-        'guildId': guildId
+        'guildId': guildId,
+        'channelId': channelId
       };
       let queryParams = {
       };
@@ -186,7 +186,7 @@ export default class MessagesApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Message;

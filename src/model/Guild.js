@@ -19,7 +19,7 @@ import Role from './Role';
 /**
  * The Guild model module.
  * @module model/Guild
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Guild {
     /**
@@ -52,20 +52,20 @@ class Guild {
         if (data) {
             obj = obj || new Guild();
 
-            if (data.hasOwnProperty('channels')) {
-                obj['channels'] = ApiClient.convertToType(data['channels'], [Channel]);
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('roles')) {
+                obj['roles'] = ApiClient.convertToType(data['roles'], [Role]);
+            }
             if (data.hasOwnProperty('members')) {
                 obj['members'] = ApiClient.convertToType(data['members'], [Member]);
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('roles')) {
-                obj['roles'] = ApiClient.convertToType(data['roles'], [Role]);
+            if (data.hasOwnProperty('channels')) {
+                obj['channels'] = ApiClient.convertToType(data['channels'], [Channel]);
             }
         }
         return obj;
@@ -75,9 +75,9 @@ class Guild {
 }
 
 /**
- * @member {Array.<module:model/Channel>} channels
+ * @member {String} name
  */
-Guild.prototype['channels'] = undefined;
+Guild.prototype['name'] = undefined;
 
 /**
  * @member {String} id
@@ -85,19 +85,19 @@ Guild.prototype['channels'] = undefined;
 Guild.prototype['id'] = undefined;
 
 /**
+ * @member {Array.<module:model/Role>} roles
+ */
+Guild.prototype['roles'] = undefined;
+
+/**
  * @member {Array.<module:model/Member>} members
  */
 Guild.prototype['members'] = undefined;
 
 /**
- * @member {String} name
+ * @member {Array.<module:model/Channel>} channels
  */
-Guild.prototype['name'] = undefined;
-
-/**
- * @member {Array.<module:model/Role>} roles
- */
-Guild.prototype['roles'] = undefined;
+Guild.prototype['channels'] = undefined;
 
 
 

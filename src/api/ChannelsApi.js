@@ -19,7 +19,7 @@ import FormChannel from '../model/FormChannel';
 /**
 * Channels service.
 * @module api/ChannelsApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class ChannelsApi {
 
@@ -36,8 +36,8 @@ export default class ChannelsApi {
 
 
     /**
-     * Callback function to receive the result of the createChannelUsingPOST operation.
-     * @callback module:api/ChannelsApi~createChannelUsingPOSTCallback
+     * Callback function to receive the result of the createChannel operation.
+     * @callback module:api/ChannelsApi~createChannelCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Channel} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -46,19 +46,19 @@ export default class ChannelsApi {
     /**
      * Creates a new Channel in specified Guild
      * @param {String} guildId ID of the specified Guild
-     * @param {module:model/FormChannel} channel Channel data
-     * @param {module:api/ChannelsApi~createChannelUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/FormChannel} formChannel Channel data
+     * @param {module:api/ChannelsApi~createChannelCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Channel}
      */
-    createChannelUsingPOST(guildId, channel, callback) {
-      let postBody = channel;
+    createChannel(guildId, formChannel, callback) {
+      let postBody = formChannel;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling createChannelUsingPOST");
+        throw new Error("Missing the required parameter 'guildId' when calling createChannel");
       }
-      // verify the required parameter 'channel' is set
-      if (channel === undefined || channel === null) {
-        throw new Error("Missing the required parameter 'channel' when calling createChannelUsingPOST");
+      // verify the required parameter 'formChannel' is set
+      if (formChannel === undefined || formChannel === null) {
+        throw new Error("Missing the required parameter 'formChannel' when calling createChannel");
       }
 
       let pathParams = {
@@ -71,7 +71,7 @@ export default class ChannelsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Channel;
@@ -83,8 +83,8 @@ export default class ChannelsApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteChannelUsingDELETE operation.
-     * @callback module:api/ChannelsApi~deleteChannelUsingDELETECallback
+     * Callback function to receive the result of the deleteChannel operation.
+     * @callback module:api/ChannelsApi~deleteChannelCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -92,24 +92,24 @@ export default class ChannelsApi {
 
     /**
      * Deletes specified Channel if current User has permissions
-     * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
-     * @param {module:api/ChannelsApi~deleteChannelUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} channelId ID of the specified Channel
+     * @param {module:api/ChannelsApi~deleteChannelCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteChannelUsingDELETE(channelId, guildId, callback) {
+    deleteChannel(guildId, channelId, callback) {
       let postBody = null;
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw new Error("Missing the required parameter 'channelId' when calling deleteChannelUsingDELETE");
-      }
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling deleteChannelUsingDELETE");
+        throw new Error("Missing the required parameter 'guildId' when calling deleteChannel");
+      }
+      // verify the required parameter 'channelId' is set
+      if (channelId === undefined || channelId === null) {
+        throw new Error("Missing the required parameter 'channelId' when calling deleteChannel");
       }
 
       let pathParams = {
-        'channelId': channelId,
-        'guildId': guildId
+        'guildId': guildId,
+        'channelId': channelId
       };
       let queryParams = {
       };
@@ -118,7 +118,7 @@ export default class ChannelsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -130,8 +130,8 @@ export default class ChannelsApi {
     }
 
     /**
-     * Callback function to receive the result of the updateChannelUsingPUT operation.
-     * @callback module:api/ChannelsApi~updateChannelUsingPUTCallback
+     * Callback function to receive the result of the updateChannel operation.
+     * @callback module:api/ChannelsApi~updateChannelCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Channel} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -139,30 +139,30 @@ export default class ChannelsApi {
 
     /**
      * Updates specified Channel if current User has permissions
-     * @param {String} channelId ID of the specified Channel
      * @param {String} guildId ID of the specified Guild
-     * @param {module:model/FormChannel} channel New channel data
-     * @param {module:api/ChannelsApi~updateChannelUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} channelId ID of the specified Channel
+     * @param {module:model/FormChannel} formChannel New channel data
+     * @param {module:api/ChannelsApi~updateChannelCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Channel}
      */
-    updateChannelUsingPUT(channelId, guildId, channel, callback) {
-      let postBody = channel;
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw new Error("Missing the required parameter 'channelId' when calling updateChannelUsingPUT");
-      }
+    updateChannel(guildId, channelId, formChannel, callback) {
+      let postBody = formChannel;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling updateChannelUsingPUT");
+        throw new Error("Missing the required parameter 'guildId' when calling updateChannel");
       }
-      // verify the required parameter 'channel' is set
-      if (channel === undefined || channel === null) {
-        throw new Error("Missing the required parameter 'channel' when calling updateChannelUsingPUT");
+      // verify the required parameter 'channelId' is set
+      if (channelId === undefined || channelId === null) {
+        throw new Error("Missing the required parameter 'channelId' when calling updateChannel");
+      }
+      // verify the required parameter 'formChannel' is set
+      if (formChannel === undefined || formChannel === null) {
+        throw new Error("Missing the required parameter 'formChannel' when calling updateChannel");
       }
 
       let pathParams = {
-        'channelId': channelId,
-        'guildId': guildId
+        'guildId': guildId,
+        'channelId': channelId
       };
       let queryParams = {
       };
@@ -171,7 +171,7 @@ export default class ChannelsApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Channel;

@@ -20,7 +20,7 @@ import User from '../model/User';
 /**
 * Authentication service.
 * @module api/AuthenticationApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class AuthenticationApi {
 
@@ -37,8 +37,8 @@ export default class AuthenticationApi {
 
 
     /**
-     * Callback function to receive the result of the loginUsingPOST operation.
-     * @callback module:api/AuthenticationApi~loginUsingPOSTCallback
+     * Callback function to receive the result of the login operation.
+     * @callback module:api/AuthenticationApi~loginCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -46,15 +46,13 @@ export default class AuthenticationApi {
 
     /**
      * Log in
-     * @param {module:model/FormLogin} loginData loginData
-     * @param {module:api/AuthenticationApi~loginUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Object} opts Optional parameters
+     * @param {module:model/FormLogin} opts.formLogin 
+     * @param {module:api/AuthenticationApi~loginCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    loginUsingPOST(loginData, callback) {
-      let postBody = loginData;
-      // verify the required parameter 'loginData' is set
-      if (loginData === undefined || loginData === null) {
-        throw new Error("Missing the required parameter 'loginData' when calling loginUsingPOST");
-      }
+    login(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['formLogin'];
 
       let pathParams = {
       };
@@ -77,8 +75,8 @@ export default class AuthenticationApi {
     }
 
     /**
-     * Callback function to receive the result of the signUpUsingPOST operation.
-     * @callback module:api/AuthenticationApi~signUpUsingPOSTCallback
+     * Callback function to receive the result of the signUp operation.
+     * @callback module:api/AuthenticationApi~signUpCallback
      * @param {String} error Error message, if any.
      * @param {module:model/User} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -86,16 +84,14 @@ export default class AuthenticationApi {
 
     /**
      * Create an account
-     * @param {module:model/RegistrationUser} registrationData registrationData
-     * @param {module:api/AuthenticationApi~signUpUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Object} opts Optional parameters
+     * @param {module:model/RegistrationUser} opts.registrationUser 
+     * @param {module:api/AuthenticationApi~signUpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    signUpUsingPOST(registrationData, callback) {
-      let postBody = registrationData;
-      // verify the required parameter 'registrationData' is set
-      if (registrationData === undefined || registrationData === null) {
-        throw new Error("Missing the required parameter 'registrationData' when calling signUpUsingPOST");
-      }
+    signUp(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['registrationUser'];
 
       let pathParams = {
       };

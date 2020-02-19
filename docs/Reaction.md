@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authorUuid** | **String** |  | 
 **emoteId** | **Number** |  | 
+**authorUuid** | **String** |  | 
 
 

@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 1.0.1
+* @version 1.0.4
 */
 
 /**
@@ -41,7 +41,7 @@ class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
+            'user-auth': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
         }
 
         /**
@@ -553,8 +553,8 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "//localhost:8080/",
-              'description': "No description provided",
+              'url': "http://localhost:8080",
+              'description': "Generated server url",
             }
       ];
     }

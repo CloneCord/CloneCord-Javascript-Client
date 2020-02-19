@@ -48,30 +48,30 @@
   }
 
   describe('MessagesApi', function() {
-    describe('deleteMessageUsingDELETE', function() {
-      it('should call deleteMessageUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteMessageUsingDELETE
-        //instance.deleteMessageUsingDELETE(function(error) {
+    describe('deleteMessage', function() {
+      it('should call deleteMessage successfully', function(done) {
+        //uncomment below and update the code to test deleteMessage
+        //instance.deleteMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMessagesUsingGET', function() {
-      it('should call getMessagesUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getMessagesUsingGET
-        //instance.getMessagesUsingGET(function(error) {
+    describe('getMessages', function() {
+      it('should call getMessages successfully', function(done) {
+        //uncomment below and update the code to test getMessages
+        //instance.getMessages(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('sendMessageUsingPOST', function() {
-      it('should call sendMessageUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test sendMessageUsingPOST
-        //instance.sendMessageUsingPOST(function(error) {
+    describe('sendMessage', function() {
+      it('should call sendMessage successfully', function(done) {
+        //uncomment below and update the code to test sendMessage
+        //instance.sendMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

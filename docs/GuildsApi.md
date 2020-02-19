@@ -4,16 +4,18 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createGuildUsingPOST**](GuildsApi.md#createGuildUsingPOST) | **POST** /guilds | Creates a new Guild
-[**deleteGuildUsingDELETE**](GuildsApi.md#deleteGuildUsingDELETE) | **DELETE** /guilds/{guildId} | Deletes an owned Guild
-[**getGuildInfoUsingGET**](GuildsApi.md#getGuildInfoUsingGET) | **GET** /guilds/{guildId} | Gets info of a specific Guild
-[**updateGuildUsingPUT**](GuildsApi.md#updateGuildUsingPUT) | **PUT** /guilds/{guildId} | Updates an owned Guild
+[**createGuild**](GuildsApi.md#createGuild) | **POST** /guilds | 
+[**deleteGuild**](GuildsApi.md#deleteGuild) | **DELETE** /guilds/{guildId} | 
+[**getGuildInfo**](GuildsApi.md#getGuildInfo) | **GET** /guilds/{guildId} | 
+[**updateGuild**](GuildsApi.md#updateGuild) | **PUT** /guilds/{guildId} | 
 
 
 
-## createGuildUsingPOST
+## createGuild
 
-> Guild createGuildUsingPOST(guild)
+> Guild createGuild(opts)
+
+
 
 Creates a new Guild
 
@@ -22,15 +24,17 @@ Creates a new Guild
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.GuildsApi();
-let guild = new CloneCordApi.FormGuild(); // FormGuild | guild
-apiInstance.createGuildUsingPOST(guild, (error, data, response) => {
+let opts = {
+  'formGuild': new CloneCordApi.FormGuild() // FormGuild | 
+};
+apiInstance.createGuild(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -44,7 +48,7 @@ apiInstance.createGuildUsingPOST(guild, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **guild** | [**FormGuild**](FormGuild.md)| guild | 
+ **formGuild** | [**FormGuild**](FormGuild.md)|  | [optional] 
 
 ### Return type
 
@@ -52,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -60,9 +64,11 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## deleteGuildUsingDELETE
+## deleteGuild
 
-> deleteGuildUsingDELETE(guildId)
+> deleteGuild(guildId)
+
+
 
 Deletes an owned Guild
 
@@ -71,15 +77,15 @@ Deletes an owned Guild
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.GuildsApi();
 let guildId = null; // String | ID of the specified Guild
-apiInstance.deleteGuildUsingDELETE(guildId, (error, data, response) => {
+apiInstance.deleteGuild(guildId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -101,7 +107,7 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -109,9 +115,11 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## getGuildInfoUsingGET
+## getGuildInfo
 
-> Guild getGuildInfoUsingGET(guildId)
+> Guild getGuildInfo(guildId)
+
+
 
 Gets info of a specific Guild
 
@@ -120,15 +128,15 @@ Gets info of a specific Guild
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.GuildsApi();
 let guildId = null; // String | ID of the specified Guild
-apiInstance.getGuildInfoUsingGET(guildId, (error, data, response) => {
+apiInstance.getGuildInfo(guildId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -150,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 
@@ -158,9 +166,11 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## updateGuildUsingPUT
+## updateGuild
 
-> Guild updateGuildUsingPUT(guildId, newGuild)
+> Guild updateGuild(guildId, formGuild)
+
+
 
 Updates an owned Guild
 
@@ -169,16 +179,16 @@ Updates an owned Guild
 ```javascript
 import CloneCordApi from 'clone_cord_api';
 let defaultClient = CloneCordApi.ApiClient.instance;
-// Configure API key authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+//user-auth.apiKeyPrefix = 'Token';
 
 let apiInstance = new CloneCordApi.GuildsApi();
 let guildId = null; // String | ID of the specified Guild
-let newGuild = new CloneCordApi.FormGuild(); // FormGuild | New guild data
-apiInstance.updateGuildUsingPUT(guildId, newGuild, (error, data, response) => {
+let formGuild = new CloneCordApi.FormGuild(); // FormGuild | New guild data
+apiInstance.updateGuild(guildId, formGuild, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -193,7 +203,7 @@ apiInstance.updateGuildUsingPUT(guildId, newGuild, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)| ID of the specified Guild | 
- **newGuild** | [**FormGuild**](FormGuild.md)| New guild data | 
+ **formGuild** | [**FormGuild**](FormGuild.md)| New guild data | 
 
 ### Return type
 
@@ -201,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[user-auth](../README.md#user-auth)
 
 ### HTTP request headers
 

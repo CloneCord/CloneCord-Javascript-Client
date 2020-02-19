@@ -48,40 +48,40 @@
   }
 
   describe('UsersApi', function() {
-    describe('getSelfGuildsUsingGET', function() {
-      it('should call getSelfGuildsUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getSelfGuildsUsingGET
-        //instance.getSelfGuildsUsingGET(function(error) {
+    describe('getSelf', function() {
+      it('should call getSelf successfully', function(done) {
+        //uncomment below and update the code to test getSelf
+        //instance.getSelf(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSelfUsingGET', function() {
-      it('should call getSelfUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getSelfUsingGET
-        //instance.getSelfUsingGET(function(error) {
+    describe('getSelfGuilds', function() {
+      it('should call getSelfGuilds successfully', function(done) {
+        //uncomment below and update the code to test getSelfGuilds
+        //instance.getSelfGuilds(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getUserUsingGET', function() {
-      it('should call getUserUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getUserUsingGET
-        //instance.getUserUsingGET(function(error) {
+    describe('getUser', function() {
+      it('should call getUser successfully', function(done) {
+        //uncomment below and update the code to test getUser
+        //instance.getUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('putSelfUsingPUT', function() {
-      it('should call putSelfUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test putSelfUsingPUT
-        //instance.putSelfUsingPUT(function(error) {
+    describe('putSelf', function() {
+      it('should call putSelf successfully', function(done) {
+        //uncomment below and update the code to test putSelf
+        //instance.putSelf(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

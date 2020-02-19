@@ -19,7 +19,7 @@ import Role from '../model/Role';
 /**
 * Roles service.
 * @module api/RolesApi
-* @version 1.0.1
+* @version 1.0.4
 */
 export default class RolesApi {
 
@@ -36,8 +36,8 @@ export default class RolesApi {
 
 
     /**
-     * Callback function to receive the result of the createRoleUsingPOST operation.
-     * @callback module:api/RolesApi~createRoleUsingPOSTCallback
+     * Callback function to receive the result of the createRole operation.
+     * @callback module:api/RolesApi~createRoleCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Role} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -46,19 +46,19 @@ export default class RolesApi {
     /**
      * Creates a new Role in specified Guild if current User has permissions
      * @param {String} guildId ID of the specified Guild
-     * @param {module:model/FormRole} role Role data
-     * @param {module:api/RolesApi~createRoleUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/FormRole} formRole Role data
+     * @param {module:api/RolesApi~createRoleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Role}
      */
-    createRoleUsingPOST(guildId, role, callback) {
-      let postBody = role;
+    createRole(guildId, formRole, callback) {
+      let postBody = formRole;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling createRoleUsingPOST");
+        throw new Error("Missing the required parameter 'guildId' when calling createRole");
       }
-      // verify the required parameter 'role' is set
-      if (role === undefined || role === null) {
-        throw new Error("Missing the required parameter 'role' when calling createRoleUsingPOST");
+      // verify the required parameter 'formRole' is set
+      if (formRole === undefined || formRole === null) {
+        throw new Error("Missing the required parameter 'formRole' when calling createRole");
       }
 
       let pathParams = {
@@ -71,7 +71,7 @@ export default class RolesApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Role;
@@ -83,8 +83,8 @@ export default class RolesApi {
     }
 
     /**
-     * Callback function to receive the result of the deleteRoleUsingDELETE operation.
-     * @callback module:api/RolesApi~deleteRoleUsingDELETECallback
+     * Callback function to receive the result of the deleteRole operation.
+     * @callback module:api/RolesApi~deleteRoleCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -94,17 +94,17 @@ export default class RolesApi {
      * Deletes specified Role in specified Guild if current User has permissions
      * @param {String} guildId ID of the specified Guild
      * @param {String} roleId ID of the specified Role
-     * @param {module:api/RolesApi~deleteRoleUsingDELETECallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/RolesApi~deleteRoleCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    deleteRoleUsingDELETE(guildId, roleId, callback) {
+    deleteRole(guildId, roleId, callback) {
       let postBody = null;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling deleteRoleUsingDELETE");
+        throw new Error("Missing the required parameter 'guildId' when calling deleteRole");
       }
       // verify the required parameter 'roleId' is set
       if (roleId === undefined || roleId === null) {
-        throw new Error("Missing the required parameter 'roleId' when calling deleteRoleUsingDELETE");
+        throw new Error("Missing the required parameter 'roleId' when calling deleteRole");
       }
 
       let pathParams = {
@@ -118,7 +118,7 @@ export default class RolesApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -130,8 +130,8 @@ export default class RolesApi {
     }
 
     /**
-     * Callback function to receive the result of the updateRoleUsingPUT operation.
-     * @callback module:api/RolesApi~updateRoleUsingPUTCallback
+     * Callback function to receive the result of the updateRole operation.
+     * @callback module:api/RolesApi~updateRoleCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Role} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -140,24 +140,24 @@ export default class RolesApi {
     /**
      * Updates specified Role in specified Guild if current User has permissions
      * @param {String} guildId ID of the specified Guild
-     * @param {String} roleId roleId
-     * @param {module:model/FormRole} role New role data
-     * @param {module:api/RolesApi~updateRoleUsingPUTCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} roleId 
+     * @param {module:model/FormRole} formRole New role data
+     * @param {module:api/RolesApi~updateRoleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Role}
      */
-    updateRoleUsingPUT(guildId, roleId, role, callback) {
-      let postBody = role;
+    updateRole(guildId, roleId, formRole, callback) {
+      let postBody = formRole;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
-        throw new Error("Missing the required parameter 'guildId' when calling updateRoleUsingPUT");
+        throw new Error("Missing the required parameter 'guildId' when calling updateRole");
       }
       // verify the required parameter 'roleId' is set
       if (roleId === undefined || roleId === null) {
-        throw new Error("Missing the required parameter 'roleId' when calling updateRoleUsingPUT");
+        throw new Error("Missing the required parameter 'roleId' when calling updateRole");
       }
-      // verify the required parameter 'role' is set
-      if (role === undefined || role === null) {
-        throw new Error("Missing the required parameter 'role' when calling updateRoleUsingPUT");
+      // verify the required parameter 'formRole' is set
+      if (formRole === undefined || formRole === null) {
+        throw new Error("Missing the required parameter 'formRole' when calling updateRole");
       }
 
       let pathParams = {
@@ -171,7 +171,7 @@ export default class RolesApi {
       let formParams = {
       };
 
-      let authNames = ['JWT'];
+      let authNames = ['user-auth'];
       let contentTypes = ['application/json'];
       let accepts = ['*/*'];
       let returnType = Role;

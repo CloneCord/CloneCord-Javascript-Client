@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(CloneCordApi.Channel);
     });
 
-    it('should have the property channelId (base name: "channelId")', function() {
-      // uncomment below and update the code to test the property channelId
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CloneCordApi.Channel();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property channelId (base name: "channelId")', function() {
+      // uncomment below and update the code to test the property channelId
       //var instane = new CloneCordApi.Channel();
       //expect(instance).to.be();
     });

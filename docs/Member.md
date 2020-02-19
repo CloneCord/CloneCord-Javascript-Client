@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**owner** | **Boolean** |  | [optional] 
-**roles** | [**[Role]**](Role.md) |  | [optional] 
 **username** | **String** |  | [optional] 
+**roles** | [**[Role]**](Role.md) |  | [optional] 
+**owner** | **Boolean** |  | [optional] 
 
 

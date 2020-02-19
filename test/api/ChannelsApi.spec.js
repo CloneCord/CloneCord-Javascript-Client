@@ -48,30 +48,30 @@
   }
 
   describe('ChannelsApi', function() {
-    describe('createChannelUsingPOST', function() {
-      it('should call createChannelUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createChannelUsingPOST
-        //instance.createChannelUsingPOST(function(error) {
+    describe('createChannel', function() {
+      it('should call createChannel successfully', function(done) {
+        //uncomment below and update the code to test createChannel
+        //instance.createChannel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteChannelUsingDELETE', function() {
-      it('should call deleteChannelUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteChannelUsingDELETE
-        //instance.deleteChannelUsingDELETE(function(error) {
+    describe('deleteChannel', function() {
+      it('should call deleteChannel successfully', function(done) {
+        //uncomment below and update the code to test deleteChannel
+        //instance.deleteChannel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateChannelUsingPUT', function() {
-      it('should call updateChannelUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateChannelUsingPUT
-        //instance.updateChannelUsingPUT(function(error) {
+    describe('updateChannel', function() {
+      it('should call updateChannel successfully', function(done) {
+        //uncomment below and update the code to test updateChannel
+        //instance.updateChannel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

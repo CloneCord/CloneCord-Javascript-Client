@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(CloneCordApi.User);
     });
 
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instane = new CloneCordApi.User();
+      //expect(instance).to.be();
+    });
+
     it('should have the property avatar (base name: "avatar")', function() {
       // uncomment below and update the code to test the property avatar
       //var instane = new CloneCordApi.User();
@@ -62,12 +68,6 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CloneCordApi.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
       //var instane = new CloneCordApi.User();
       //expect(instance).to.be();
     });

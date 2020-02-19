@@ -48,40 +48,40 @@
   }
 
   describe('GuildsApi', function() {
-    describe('createGuildUsingPOST', function() {
-      it('should call createGuildUsingPOST successfully', function(done) {
-        //uncomment below and update the code to test createGuildUsingPOST
-        //instance.createGuildUsingPOST(function(error) {
+    describe('createGuild', function() {
+      it('should call createGuild successfully', function(done) {
+        //uncomment below and update the code to test createGuild
+        //instance.createGuild(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteGuildUsingDELETE', function() {
-      it('should call deleteGuildUsingDELETE successfully', function(done) {
-        //uncomment below and update the code to test deleteGuildUsingDELETE
-        //instance.deleteGuildUsingDELETE(function(error) {
+    describe('deleteGuild', function() {
+      it('should call deleteGuild successfully', function(done) {
+        //uncomment below and update the code to test deleteGuild
+        //instance.deleteGuild(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getGuildInfoUsingGET', function() {
-      it('should call getGuildInfoUsingGET successfully', function(done) {
-        //uncomment below and update the code to test getGuildInfoUsingGET
-        //instance.getGuildInfoUsingGET(function(error) {
+    describe('getGuildInfo', function() {
+      it('should call getGuildInfo successfully', function(done) {
+        //uncomment below and update the code to test getGuildInfo
+        //instance.getGuildInfo(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateGuildUsingPUT', function() {
-      it('should call updateGuildUsingPUT successfully', function(done) {
-        //uncomment below and update the code to test updateGuildUsingPUT
-        //instance.updateGuildUsingPUT(function(error) {
+    describe('updateGuild', function() {
+      it('should call updateGuild successfully', function(done) {
+        //uncomment below and update the code to test updateGuild
+        //instance.updateGuild(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

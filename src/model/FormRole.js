@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The FormRole model module.
  * @module model/FormRole
- * @version 1.0.1
+ * @version 1.0.4
  */
 class FormRole {
     /**
      * Constructs a new <code>FormRole</code>.
      * @alias module:model/FormRole
-     * @param hexColor {String} 
      * @param name {String} 
+     * @param hexColor {String} 
      */
-    constructor(hexColor, name) { 
+    constructor(name, hexColor) { 
         
-        FormRole.initialize(this, hexColor, name);
+        FormRole.initialize(this, name, hexColor);
     }
 
     /**
@@ -35,9 +35,9 @@ class FormRole {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, hexColor, name) { 
-        obj['hexColor'] = hexColor;
+    static initialize(obj, name, hexColor) { 
         obj['name'] = name;
+        obj['hexColor'] = hexColor;
     }
 
     /**
@@ -51,11 +51,11 @@ class FormRole {
         if (data) {
             obj = obj || new FormRole();
 
-            if (data.hasOwnProperty('hexColor')) {
-                obj['hexColor'] = ApiClient.convertToType(data['hexColor'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('hexColor')) {
+                obj['hexColor'] = ApiClient.convertToType(data['hexColor'], 'String');
             }
         }
         return obj;
@@ -65,14 +65,14 @@ class FormRole {
 }
 
 /**
- * @member {String} hexColor
- */
-FormRole.prototype['hexColor'] = undefined;
-
-/**
  * @member {String} name
  */
 FormRole.prototype['name'] = undefined;
+
+/**
+ * @member {String} hexColor
+ */
+FormRole.prototype['hexColor'] = undefined;
 
 
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **String** |  | 
 **hexColor** | **String** |  | 
 **id** | **String** |  | [optional] 
-**name** | **String** |  | 
 
 

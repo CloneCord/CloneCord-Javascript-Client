@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormUser model module.
  * @module model/FormUser
- * @version 1.0.1
+ * @version 1.0.4
  */
 class FormUser {
     /**
@@ -49,11 +49,11 @@ class FormUser {
         if (data) {
             obj = obj || new FormUser();
 
-            if (data.hasOwnProperty('avatar')) {
-                obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
-            }
             if (data.hasOwnProperty('username')) {
                 obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            }
+            if (data.hasOwnProperty('avatar')) {
+                obj['avatar'] = ApiClient.convertToType(data['avatar'], 'String');
             }
         }
         return obj;
@@ -63,14 +63,14 @@ class FormUser {
 }
 
 /**
- * @member {String} avatar
- */
-FormUser.prototype['avatar'] = undefined;
-
-/**
  * @member {String} username
  */
 FormUser.prototype['username'] = undefined;
+
+/**
+ * @member {String} avatar
+ */
+FormUser.prototype['avatar'] = undefined;
 
 
 

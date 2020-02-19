@@ -16,18 +16,18 @@ import ApiClient from '../ApiClient';
 /**
  * The Reaction model module.
  * @module model/Reaction
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Reaction {
     /**
      * Constructs a new <code>Reaction</code>.
      * @alias module:model/Reaction
-     * @param authorUuid {String} 
      * @param emoteId {Number} 
+     * @param authorUuid {String} 
      */
-    constructor(authorUuid, emoteId) { 
+    constructor(emoteId, authorUuid) { 
         
-        Reaction.initialize(this, authorUuid, emoteId);
+        Reaction.initialize(this, emoteId, authorUuid);
     }
 
     /**
@@ -35,9 +35,9 @@ class Reaction {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, authorUuid, emoteId) { 
-        obj['authorUuid'] = authorUuid;
+    static initialize(obj, emoteId, authorUuid) { 
         obj['emoteId'] = emoteId;
+        obj['authorUuid'] = authorUuid;
     }
 
     /**
@@ -51,11 +51,11 @@ class Reaction {
         if (data) {
             obj = obj || new Reaction();
 
-            if (data.hasOwnProperty('authorUuid')) {
-                obj['authorUuid'] = ApiClient.convertToType(data['authorUuid'], 'String');
-            }
             if (data.hasOwnProperty('emoteId')) {
                 obj['emoteId'] = ApiClient.convertToType(data['emoteId'], 'Number');
+            }
+            if (data.hasOwnProperty('authorUuid')) {
+                obj['authorUuid'] = ApiClient.convertToType(data['authorUuid'], 'String');
             }
         }
         return obj;
@@ -65,14 +65,14 @@ class Reaction {
 }
 
 /**
- * @member {String} authorUuid
- */
-Reaction.prototype['authorUuid'] = undefined;
-
-/**
  * @member {Number} emoteId
  */
 Reaction.prototype['emoteId'] = undefined;
+
+/**
+ * @member {String} authorUuid
+ */
+Reaction.prototype['authorUuid'] = undefined;
 
 
 

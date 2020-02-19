@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(CloneCordApi.FormUser);
     });
 
-    it('should have the property avatar (base name: "avatar")', function() {
-      // uncomment below and update the code to test the property avatar
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
       //var instane = new CloneCordApi.FormUser();
       //expect(instance).to.be();
     });
 
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
+    it('should have the property avatar (base name: "avatar")', function() {
+      // uncomment below and update the code to test the property avatar
       //var instane = new CloneCordApi.FormUser();
       //expect(instance).to.be();
     });

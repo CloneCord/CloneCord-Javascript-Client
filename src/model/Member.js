@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.0.1
+ * @version 1.0.4
  */
 class Member {
     /**
@@ -51,14 +51,14 @@ class Member {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = ApiClient.convertToType(data['owner'], 'Boolean');
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = ApiClient.convertToType(data['roles'], [Role]);
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = ApiClient.convertToType(data['owner'], 'Boolean');
             }
         }
         return obj;
@@ -73,9 +73,9 @@ class Member {
 Member.prototype['id'] = undefined;
 
 /**
- * @member {Boolean} owner
+ * @member {String} username
  */
-Member.prototype['owner'] = undefined;
+Member.prototype['username'] = undefined;
 
 /**
  * @member {Array.<module:model/Role>} roles
@@ -83,9 +83,9 @@ Member.prototype['owner'] = undefined;
 Member.prototype['roles'] = undefined;
 
 /**
- * @member {String} username
+ * @member {Boolean} owner
  */
-Member.prototype['username'] = undefined;
+Member.prototype['owner'] = undefined;
 
 
 

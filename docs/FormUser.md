@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | **String** |  | [optional] 
 **username** | **String** |  | 
+**avatar** | **String** |  | [optional] 
 
 
