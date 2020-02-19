@@ -19,7 +19,7 @@ import Role from './Role';
 /**
  * The Guild model module.
  * @module model/Guild
- * @version 1.0.5
+ * @version 1.0.1
  */
 class Guild {
     /**

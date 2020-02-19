@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormChannel model module.
  * @module model/FormChannel
- * @version 1.0.5
+ * @version 1.0.1
  */
 class FormChannel {
     /**

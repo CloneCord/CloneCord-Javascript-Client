@@ -20,7 +20,7 @@ import User from '../model/User';
 /**
 * Authentication service.
 * @module api/AuthenticationApi
-* @version 1.0.5
+* @version 1.0.1
 */
 export default class AuthenticationApi {
 
@@ -46,13 +46,15 @@ export default class AuthenticationApi {
 
     /**
      * Log in
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FormLogin} opts.formLogin 
+     * @param {module:model/FormLogin} formLogin 
      * @param {module:api/AuthenticationApi~loginCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    login(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['formLogin'];
+    login(formLogin, callback) {
+      let postBody = formLogin;
+      // verify the required parameter 'formLogin' is set
+      if (formLogin === undefined || formLogin === null) {
+        throw new Error("Missing the required parameter 'formLogin' when calling login");
+      }
 
       let pathParams = {
       };
@@ -84,14 +86,16 @@ export default class AuthenticationApi {
 
     /**
      * Create an account
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RegistrationUser} opts.registrationUser 
+     * @param {module:model/RegistrationUser} registrationUser 
      * @param {module:api/AuthenticationApi~signUpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
-    signUp(opts, callback) {
-      opts = opts || {};
-      let postBody = opts['registrationUser'];
+    signUp(registrationUser, callback) {
+      let postBody = registrationUser;
+      // verify the required parameter 'registrationUser' is set
+      if (registrationUser === undefined || registrationUser === null) {
+        throw new Error("Missing the required parameter 'registrationUser' when calling signUp");
+      }
 
       let pathParams = {
       };

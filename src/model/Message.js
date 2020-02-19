@@ -17,7 +17,7 @@ import Reaction from './Reaction';
 /**
  * The Message model module.
  * @module model/Message
- * @version 1.0.5
+ * @version 1.0.1
  */
 class Message {
     /**

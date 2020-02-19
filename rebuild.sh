@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-rm -r src
-rm -r test
-rm -r docs
+
+set -e
+
+rm -rf src
+rm -rf test
+rm -rf docs
 echo "{\"projectVersion\": \"$1\" }" >config.json
 java -jar openapi-generator-cli-4.2.3.jar generate -i http://localhost:8080/v3/api-docs -g javascript -c config.json -o .
-rm -r config.json
+rm config.json
 rm git_push.sh
 git add -A
 npm install

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormUser model module.
  * @module model/FormUser
- * @version 1.0.5
+ * @version 1.0.1
  */
 class FormUser {
     /**

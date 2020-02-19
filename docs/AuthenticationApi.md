@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## login
 
-> login(opts)
+> login(formLogin)
 
 Log in
 
@@ -21,10 +21,8 @@ Log in
 import CloneCordApi from 'clone_cord_api';
 
 let apiInstance = new CloneCordApi.AuthenticationApi();
-let opts = {
-  'formLogin': new CloneCordApi.FormLogin() // FormLogin | 
-};
-apiInstance.login(opts, (error, data, response) => {
+let formLogin = new CloneCordApi.FormLogin(); // FormLogin | 
+apiInstance.login(formLogin, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -38,7 +36,7 @@ apiInstance.login(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **formLogin** | [**FormLogin**](FormLogin.md)|  | [optional] 
+ **formLogin** | [**FormLogin**](FormLogin.md)|  | 
 
 ### Return type
 
@@ -56,7 +54,7 @@ No authorization required
 
 ## signUp
 
-> User signUp(opts)
+> User signUp(registrationUser)
 
 Create an account
 
@@ -66,10 +64,8 @@ Create an account
 import CloneCordApi from 'clone_cord_api';
 
 let apiInstance = new CloneCordApi.AuthenticationApi();
-let opts = {
-  'registrationUser': new CloneCordApi.RegistrationUser() // RegistrationUser | 
-};
-apiInstance.signUp(opts, (error, data, response) => {
+let registrationUser = new CloneCordApi.RegistrationUser(); // RegistrationUser | 
+apiInstance.signUp(registrationUser, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -83,7 +79,7 @@ apiInstance.signUp(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registrationUser** | [**RegistrationUser**](RegistrationUser.md)|  | [optional] 
+ **registrationUser** | [**RegistrationUser**](RegistrationUser.md)|  | 
 
 ### Return type
 
