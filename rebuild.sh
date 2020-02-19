@@ -5,8 +5,8 @@ rm -r docs
 echo "{\"projectVersion\": \"$1\" }" >config.json
 java -jar openapi-generator-cli-4.2.3.jar generate -i http://localhost:8080/v3/api-docs -g javascript -c config.json -o .
 rm -r config.json
-git add -A
 rm git_push.sh
+git add -A
 npm install
 npm audit fix
 npm test
