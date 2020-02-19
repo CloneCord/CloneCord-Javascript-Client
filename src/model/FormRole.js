@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormRole model module.
  * @module model/FormRole
- * @version 1.0.4
+ * @version 1.0.5
  */
 class FormRole {
     /**
