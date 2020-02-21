@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Role model module.
  * @module model/Role
- * @version 1.0.6
+ * @version 1.0.7
  */
 class Role {
     /**
@@ -60,6 +60,9 @@ class Role {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
+            if (data.hasOwnProperty('rolePermissions')) {
+                obj['rolePermissions'] = ApiClient.convertToType(data['rolePermissions'], ['String']);
+            }
         }
         return obj;
     }
@@ -82,8 +85,46 @@ Role.prototype['hexColor'] = undefined;
  */
 Role.prototype['id'] = undefined;
 
+/**
+ * @member {Array.<module:model/Role.RolePermissionsEnum>} rolePermissions
+ */
+Role.prototype['rolePermissions'] = undefined;
 
 
+
+
+
+/**
+ * Allowed values for the <code>rolePermissions</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Role['RolePermissionsEnum'] = {
+
+    /**
+     * value: "ADMINISTRATOR"
+     * @const
+     */
+    "ADMINISTRATOR": "ADMINISTRATOR",
+
+    /**
+     * value: "WRITE_MESSAGES"
+     * @const
+     */
+    "WRITE_MESSAGES": "WRITE_MESSAGES",
+
+    /**
+     * value: "READ_MESSAGES"
+     * @const
+     */
+    "READ_MESSAGES": "READ_MESSAGES",
+
+    /**
+     * value: "CHANNELS"
+     * @const
+     */
+    "CHANNELS": "CHANNELS"
+};
 
 
 

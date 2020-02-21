@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloneCordApi.GuildsApi();
+    instance = new CloneCordApi.MemberRolesApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,51 +47,21 @@
       object[property] = value;
   }
 
-  describe('GuildsApi', function() {
-    describe('createGuild', function() {
-      it('should call createGuild successfully', function(done) {
-        //uncomment below and update the code to test createGuild
-        //instance.createGuild(function(error) {
+  describe('MemberRolesApi', function() {
+    describe('addRole', function() {
+      it('should call addRole successfully', function(done) {
+        //uncomment below and update the code to test addRole
+        //instance.addRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteGuild', function() {
-      it('should call deleteGuild successfully', function(done) {
-        //uncomment below and update the code to test deleteGuild
-        //instance.deleteGuild(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getGuildInfo', function() {
-      it('should call getGuildInfo successfully', function(done) {
-        //uncomment below and update the code to test getGuildInfo
-        //instance.getGuildInfo(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('kickMember', function() {
-      it('should call kickMember successfully', function(done) {
-        //uncomment below and update the code to test kickMember
-        //instance.kickMember(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateGuild', function() {
-      it('should call updateGuild successfully', function(done) {
-        //uncomment below and update the code to test updateGuild
-        //instance.updateGuild(function(error) {
+    describe('removeRole', function() {
+      it('should call removeRole successfully', function(done) {
+        //uncomment below and update the code to test removeRole
+        //instance.removeRole(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

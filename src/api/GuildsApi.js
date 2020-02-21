@@ -19,7 +19,7 @@ import Guild from '../model/Guild';
 /**
 * Guilds service.
 * @module api/GuildsApi
-* @version 1.0.6
+* @version 1.0.7
 */
 export default class GuildsApi {
 
@@ -152,6 +152,52 @@ export default class GuildsApi {
       let returnType = Guild;
       return this.apiClient.callApi(
         '/guilds/{guildId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the kickMember operation.
+     * @callback module:api/GuildsApi~kickMemberCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} guildId 
+     * @param {String} memberId 
+     * @param {module:api/GuildsApi~kickMemberCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    kickMember(guildId, memberId, callback) {
+      let postBody = null;
+      // verify the required parameter 'guildId' is set
+      if (guildId === undefined || guildId === null) {
+        throw new Error("Missing the required parameter 'guildId' when calling kickMember");
+      }
+      // verify the required parameter 'memberId' is set
+      if (memberId === undefined || memberId === null) {
+        throw new Error("Missing the required parameter 'memberId' when calling kickMember");
+      }
+
+      let pathParams = {
+        'guildId': guildId,
+        'memberId': memberId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['user-auth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/guilds/{memberId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

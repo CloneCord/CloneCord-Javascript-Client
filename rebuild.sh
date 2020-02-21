@@ -6,6 +6,7 @@ if [ -z "$1" ]
     echo "No argument supplied"
     false
 fi
+rm -rf package-lock.json
 rm -rf src
 rm -rf test
 rm -rf docs

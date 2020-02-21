@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createGuild**](GuildsApi.md#createGuild) | **POST** /guilds | 
 [**deleteGuild**](GuildsApi.md#deleteGuild) | **DELETE** /guilds/{guildId} | 
 [**getGuildInfo**](GuildsApi.md#getGuildInfo) | **GET** /guilds/{guildId} | 
+[**kickMember**](GuildsApi.md#kickMember) | **DELETE** /guilds/{memberId} | 
 [**updateGuild**](GuildsApi.md#updateGuild) | **PUT** /guilds/{guildId} | 
 
 
@@ -164,6 +165,57 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: */*
+
+
+## kickMember
+
+> kickMember(guildId, memberId)
+
+
+
+### Example
+
+```javascript
+import CloneCordApi from 'clone_cord_api';
+let defaultClient = CloneCordApi.ApiClient.instance;
+// Configure API key authorization: user-auth
+let user-auth = defaultClient.authentications['user-auth'];
+user-auth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//user-auth.apiKeyPrefix = 'Token';
+
+let apiInstance = new CloneCordApi.GuildsApi();
+let guildId = null; // String | 
+let memberId = null; // String | 
+apiInstance.kickMember(guildId, memberId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **guildId** | [**String**](.md)|  | 
+ **memberId** | [**String**](.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[user-auth](../README.md#user-auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
 ## updateGuild

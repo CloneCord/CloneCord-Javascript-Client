@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegistrationUser model module.
  * @module model/RegistrationUser
- * @version 1.0.6
+ * @version 1.0.7
  */
 class RegistrationUser {
     /**

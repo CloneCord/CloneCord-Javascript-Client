@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rolePermissions (base name: "rolePermissions")', function() {
+      // uncomment below and update the code to test the property rolePermissions
+      //var instane = new CloneCordApi.Role();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

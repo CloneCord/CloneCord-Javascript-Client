@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Reaction model module.
  * @module model/Reaction
- * @version 1.0.6
+ * @version 1.0.7
  */
 class Reaction {
     /**

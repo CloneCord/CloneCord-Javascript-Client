@@ -20,7 +20,7 @@ import User from '../model/User';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 1.0.6
+* @version 1.0.7
 */
 export default class UsersApi {
 

@@ -30,6 +30,7 @@ import User from './model/User';
 import AuthenticationApi from './api/AuthenticationApi';
 import ChannelsApi from './api/ChannelsApi';
 import GuildsApi from './api/GuildsApi';
+import MemberRolesApi from './api/MemberRolesApi';
 import MessagesApi from './api/MessagesApi';
 import RolesApi from './api/RolesApi';
 import UsersApi from './api/UsersApi';
@@ -64,7 +65,7 @@ import UsersApi from './api/UsersApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.6
+* @version 1.0.7
 */
 export {
     /**
@@ -174,6 +175,12 @@ export {
     * @property {module:api/GuildsApi}
     */
     GuildsApi,
+
+    /**
+    * The MemberRolesApi service constructor.
+    * @property {module:api/MemberRolesApi}
+    */
+    MemberRolesApi,
 
     /**
     * The MessagesApi service constructor.
