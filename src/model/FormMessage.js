@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormMessage model module.
  * @module model/FormMessage
- * @version 1.0.7
+ * @version 1.0.8
  */
 class FormMessage {
     /**

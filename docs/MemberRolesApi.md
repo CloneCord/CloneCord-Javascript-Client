@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## addRole
 
-> addRole(guildId, memberId, opts)
+> addRole(guildId, memberId, body)
 
 
 
@@ -29,10 +29,8 @@ user-auth.apiKey = 'YOUR API KEY';
 let apiInstance = new CloneCordApi.MemberRolesApi();
 let guildId = null; // String | 
 let memberId = null; // String | 
-let opts = {
-  'body': null // String | 
-};
-apiInstance.addRole(guildId, memberId, opts, (error, data, response) => {
+let body = null; // String | 
+apiInstance.addRole(guildId, memberId, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)|  | 
  **memberId** | [**String**](.md)|  | 
- **body** | **String**|  | [optional] 
+ **body** | **String**|  | 
 
 ### Return type
 
@@ -66,7 +64,7 @@ null (empty response body)
 
 ## removeRole
 
-> removeRole(guildId, memberId, opts)
+> removeRole(guildId, memberId, body)
 
 
 
@@ -84,10 +82,8 @@ user-auth.apiKey = 'YOUR API KEY';
 let apiInstance = new CloneCordApi.MemberRolesApi();
 let guildId = null; // String | 
 let memberId = null; // String | 
-let opts = {
-  'body': null // String | 
-};
-apiInstance.removeRole(guildId, memberId, opts, (error, data, response) => {
+let body = null; // String | 
+apiInstance.removeRole(guildId, memberId, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -103,7 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guildId** | [**String**](.md)|  | 
  **memberId** | [**String**](.md)|  | 
- **body** | **String**|  | [optional] 
+ **body** | **String**|  | 
 
 ### Return type
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormLogin model module.
  * @module model/FormLogin
- * @version 1.0.7
+ * @version 1.0.8
  */
 class FormLogin {
     /**

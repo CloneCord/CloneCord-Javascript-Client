@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * MemberRoles service.
 * @module api/MemberRolesApi
-* @version 1.0.7
+* @version 1.0.8
 */
 export default class MemberRolesApi {
 
@@ -44,13 +44,11 @@ export default class MemberRolesApi {
     /**
      * @param {String} guildId 
      * @param {String} memberId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.body 
+     * @param {String} body 
      * @param {module:api/MemberRolesApi~addRoleCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    addRole(guildId, memberId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
+    addRole(guildId, memberId, body, callback) {
+      let postBody = body;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling addRole");
@@ -58,6 +56,10 @@ export default class MemberRolesApi {
       // verify the required parameter 'memberId' is set
       if (memberId === undefined || memberId === null) {
         throw new Error("Missing the required parameter 'memberId' when calling addRole");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling addRole");
       }
 
       let pathParams = {
@@ -93,13 +95,11 @@ export default class MemberRolesApi {
     /**
      * @param {String} guildId 
      * @param {String} memberId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.body 
+     * @param {String} body 
      * @param {module:api/MemberRolesApi~removeRoleCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    removeRole(guildId, memberId, opts, callback) {
-      opts = opts || {};
-      let postBody = opts['body'];
+    removeRole(guildId, memberId, body, callback) {
+      let postBody = body;
       // verify the required parameter 'guildId' is set
       if (guildId === undefined || guildId === null) {
         throw new Error("Missing the required parameter 'guildId' when calling removeRole");
@@ -107,6 +107,10 @@ export default class MemberRolesApi {
       // verify the required parameter 'memberId' is set
       if (memberId === undefined || memberId === null) {
         throw new Error("Missing the required parameter 'memberId' when calling removeRole");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling removeRole");
       }
 
       let pathParams = {

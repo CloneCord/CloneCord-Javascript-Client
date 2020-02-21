@@ -20,7 +20,7 @@ import User from '../model/User';
 /**
 * Authentication service.
 * @module api/AuthenticationApi
-* @version 1.0.7
+* @version 1.0.8
 */
 export default class AuthenticationApi {
 
